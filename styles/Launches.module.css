@@ -1,0 +1,162 @@
+.launchesHero {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/launch-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  z-index: 2;
+}
+
+.heroContent h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, #ff4d4d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heroContent p {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+}
+
+.timelineSection {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(5, 7, 20, 0.9);
+}
+
+.timelineContainer {
+  overflow-x: auto;
+  padding: 2rem 0;
+}
+
+.launchDetailSection {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(15, 23, 41, 0.8);
+}
+
+.launchDetail {
+  background-color: var(--card);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid var(--border);
+}
+
+.launchHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.launchHeader h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+}
+
+.launchStatus {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.success {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+}
+
+.failure {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.launchInfo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.infoItem h3 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.infoItem p {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.launchDescription {
+  margin-bottom: 2rem;
+}
+
+.launchDescription h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.launchDescription p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.launchVideo h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.videoContainer {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.videoContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .launchInfo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .launchHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .launchInfo {
+    grid-template-columns: 1fr;
+  }
+}

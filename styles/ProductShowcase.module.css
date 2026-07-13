@@ -1,0 +1,268 @@
+/* Starfield background */
+.bgStarfield {
+  min-height: 100vh;
+  background: #0a0a23;
+  position: relative;
+  overflow-x: hidden;
+}
+.bgStarfield::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-radial-gradient(circle at 20% 30%, #fff2 1px, transparent 2px 100px),
+              repeating-radial-gradient(circle at 80% 70%, #fff1 1.5px, transparent 2.5px 120px),
+              repeating-radial-gradient(circle at 50% 50%, #fff3 1.2px, transparent 2.2px 80px);
+  animation: starfield 60s linear infinite;
+}
+@keyframes starfield {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 100vw 100vh, -100vw -100vh, 50vw 50vh; }
+}
+
+/* Hero Section */
+.heroSection {
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.heroContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.heroTitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 24px #2b1055cc;
+}
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #b0b7c3;
+  margin-bottom: 0.5rem;
+}
+.heroAccent {
+  color: #7f5af0;
+  font-weight: 600;
+}
+
+/* Product Grid */
+.productGridWrap {
+  padding: 2rem 0 3rem 0;
+  z-index: 2;
+  position: relative;
+}
+.sectionTitle {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Glassmorphism Card */
+.glassCard {
+  background: rgba(30, 32, 60, 0.7);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 #000a, 0 1.5px 8px #7f5af055;
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(127, 90, 240, 0.15);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+}
+.glassCard:hover {
+  transform: translateY(-8px) scale(1.025);
+  box-shadow: 0 16px 48px 0 #7f5af0cc, 0 2px 12px #fff2;
+  border-color: #7f5af0;
+}
+
+/* Floating Badges */
+.badgeWrap {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 2;
+}
+.floatingBadge {
+  display: inline-block;
+  padding: 0.45em 1.1em;
+  border-radius: 2em;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 0 16px 2px #fff5;
+  background: linear-gradient(90deg, #7f5af0 60%, #2b1055 100%);
+  letter-spacing: 0.04em;
+  animation: badgeGlow 2.5s infinite alternate;
+}
+@keyframes badgeGlow {
+  0% { box-shadow: 0 0 8px 2px #7f5af0cc; }
+  100% { box-shadow: 0 0 24px 4px #fff8; }
+}
+.floatingBadge.new { background: linear-gradient(90deg, #00c6fb 60%, #005bea 100%); }
+.floatingBadge.bestseller { background: linear-gradient(90deg, #ffb347 60%, #ffcc33 100%); color: #222; }
+.floatingBadge.premium { background: linear-gradient(90deg, #ff5e62 60%, #ff9966 100%); }
+
+/* Product Image & Overlay */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  border-radius: 1.2rem 1.2rem 0 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2b1055 60%, #7597de 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.productImg {
+  border-radius: 1.2rem 1.2rem 0 0;
+  object-fit: cover;
+  background: #222;
+}
+.priceTag {
+  position: absolute;
+  bottom: 1.1rem;
+  left: 1.1rem;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.4em 1em;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 12px #0008;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.oldPrice {
+  color: #b0b7c3;
+  text-decoration: line-through;
+  font-size: 1.05rem;
+  margin-left: 0.5em;
+  font-weight: 400;
+}
+
+/* Card Content */
+.cardContent {
+  padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.productName {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.2em;
+}
+.productDesc {
+  color: #b0b7c3;
+  font-size: 1.05rem;
+  margin-bottom: 0.7em;
+}
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em 1.2em;
+}
+.featureItem {
+  color: #7f5af0;
+  font-size: 0.98rem;
+  font-weight: 500;
+  background: rgba(127,90,240,0.08);
+  border-radius: 0.7em;
+  padding: 0.2em 0.8em;
+}
+
+/* CTA Button */
+.ctaBtn {
+  width: 100%;
+  margin-top: 0.7em;
+  font-size: 1.08rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #7f5af0 60%, #2b1055 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 12px #7f5af055;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+}
+.ctaBtn:hover {
+  background: linear-gradient(90deg, #2b1055 60%, #7f5af0 100%);
+  box-shadow: 0 4px 24px #7f5af0cc;
+  transform: translateY(-2px) scale(1.03);
+}
+.rocketIcon {
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+.ctaBtn:hover .rocketIcon {
+  transform: translateY(-4px) scale(1.2) rotate(-10deg);
+}
+
+/* Callout Section */
+.calloutSection {
+  padding: 2.5rem 0 2rem 0;
+  text-align: center;
+  background: linear-gradient(90deg, #2b1055 60%, #7597de 100%);
+  margin-top: 2rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-shadow: 0 -2px 24px #2b105555;
+}
+.calloutInner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.calloutText {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.calloutAccent {
+  color: #ffb347;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .productGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+  .glassCard {
+    min-height: 380px;
+  }
+  .heroTitle {
+    font-size: 2rem;
+  }
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+}

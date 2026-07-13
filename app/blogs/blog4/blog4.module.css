@@ -1,0 +1,247 @@
+.blogContainer {
+  min-height: 100vh;
+  background: #000000;
+  color: #e9e9ff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding-top: 2rem;
+}
+
+.blogMain {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.blogContent {
+  background: rgba(20, 20, 20, 0.9);
+  border-radius: 16px;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #b4b4ff;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 2.5rem;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: rgba(180, 180, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background: rgba(180, 180, 255, 0.2);
+  transform: translateX(-4px);
+}
+
+.blogHeader {
+  margin-bottom: 2.5rem;
+}
+
+.blogTitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #b4b4ff 0%, #7a7ab3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.blogMeta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #8a8abf;
+}
+
+.featuredImageContainer {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.featuredImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.blogArticle {
+  line-height: 1.8;
+}
+
+.articleContent {
+  font-size: 17px;
+}
+
+.leadParagraph {
+  font-size: 19px;
+  color: #bfbfd9;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.sectionTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1.5rem 0;
+  color: #b4b4ff;
+}
+
+.articleContent p {
+  margin-bottom: 1.2rem;
+  color: #cfcfee;
+}
+
+.articleContent code {
+  background: rgba(180, 180, 255, 0.15);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 14px;
+  color: #b4b4ff;
+}
+
+.quote {
+  background: rgba(180, 180, 255, 0.08);
+  border-left: 4px solid #5b5bff;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #bfbfd9;
+  font-size: 17px;
+}
+
+.dialogueBox {
+  background: rgba(30, 30, 30, 0.9);
+  border: 1px solid rgba(180, 180, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.dialogueBox p {
+  margin-bottom: 0.8rem;
+}
+
+.dialogueBox p:last-child {
+  margin-bottom: 0;
+}
+
+.conclusion {
+  background: rgba(180, 180, 255, 0.08);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+  border: 1px solid rgba(180, 180, 255, 0.15);
+}
+
+.callToAction {
+  font-size: 19px;
+  color: #b4b4ff;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.relatedSection {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.relatedTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #b4b4ff;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.relatedCard {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.relatedCard:hover {
+  background: rgba(30, 30, 30, 0.9);
+  border-color: rgba(180, 180, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.relatedCard h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #b4b4ff;
+}
+
+.relatedCard p {
+  font-size: 15px;
+  color: #8a8abf;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blogMain {
+    padding: 1.5rem 1rem;
+  }
+  
+  .blogContent {
+    padding: 2rem;
+  }
+  
+  .blogTitle {
+    font-size: 2.2rem;
+  }
+  
+  .blogMeta {
+    gap: 1.5rem;
+  }
+  
+  .relatedGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogTitle {
+    font-size: 1.9rem;
+  }
+  
+  .blogContent {
+    padding: 1.5rem;
+  }
+  
+  .metaItem {
+    font-size: 13px;
+  }
+}

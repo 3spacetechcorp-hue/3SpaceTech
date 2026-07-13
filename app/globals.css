@@ -1,0 +1,162 @@
+:root {
+  --background: #000000;
+  --foreground: #f8f9fa;
+  --primary: #ffffff;
+  --secondary: #3d3d3d;
+  --accent: #8338ec;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b7c3;
+  --border: #1a1a1a;
+  --card: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+cursor{
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--secondary);
+  color: var(--text-primary);
+}
+
+.btn-primary:hover {
+  background-color: #3a3434;
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary);
+  color: var(--text-primary);
+  transform: translateY(-3px);
+}
+
+.card {
+  background-color: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+

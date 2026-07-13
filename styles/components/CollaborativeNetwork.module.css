@@ -1,0 +1,197 @@
+.collaborative-network {
+  background-color: #0a0a0a;
+  padding: 4rem 2rem;
+  padding-bottom: 4rem;
+  min-height: 60vh;
+  width: 100%;
+  position: relative;
+  z-index: 4;
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+}
+
+.network-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  height: 100%;
+}
+
+.network-header {
+  flex-shrink: 0;
+}
+
+.network-title {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  flex: 1;
+  width: 100%;
+}
+
+.partner-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  transition: all 0.3s ease;
+}
+
+.partner-card:hover {
+  border-color: #555;
+  transform: translateY(-2px);
+}
+
+.partner-logo {
+  text-align: center;
+  width: 100%;
+}
+
+/* SWATI Logo */
+.swati-logo {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.swati-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+/* Pomegranate Logo */
+.pomegranate-logo {
+  color: #cccccc;
+}
+
+.pome-text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: -0.2rem;
+}
+
+.granate-text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Gargoosh Logo */
+.gargoosh-logo {
+  color: #cccccc;
+}
+
+.gargoosh-text {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Velocity Logo */
+.velocity-logo {
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.velo-icon {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.velo-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .network-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .network-title {
+    font-size: 2.2rem;
+  }
+  
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .collaborative-network {
+    padding: 3rem 1rem;
+  }
+  
+  .network-title {
+    font-size: 1.8rem;
+  }
+  
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .partner-card {
+    padding: 2rem 1.5rem;
+    min-height: 150px;
+  }
+  
+  .swati-text {
+    font-size: 1rem;
+  }
+  
+  .pome-text,
+  .granate-text {
+    font-size: 1.2rem;
+  }
+  
+  .gargoosh-text {
+    font-size: 1.4rem;
+  }
+  
+  .velo-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .collaborative-network {
+    padding: 2rem 0.5rem;
+  }
+  
+  .network-title {
+    font-size: 1.5rem;
+  }
+  
+  .partner-card {
+    padding: 1.5rem 1rem;
+    min-height: 120px;
+  }
+}
