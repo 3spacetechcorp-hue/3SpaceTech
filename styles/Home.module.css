@@ -549,8 +549,6 @@
   font-size: 1rem;
   line-height: 1.6;
   border-left: 3px solid var(--accent-color);
-  padding-left: 1rem;
-  margin-left: 3rem;
 }
 
 .pyqOpen .pyqAnswer {
