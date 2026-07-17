@@ -75,7 +75,7 @@
 
 .socialLinks a:hover {
   background-color: var(--primary);
-  color: white;
+  color: #000;
   transform: translateY(-3px);
 }
 
