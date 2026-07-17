@@ -142,7 +142,7 @@
 
 .resetButton {
   padding: 0.8rem 1.5rem;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: var(--text-primary);
   border: none;
   border-radius: 30px;
@@ -151,7 +151,7 @@
 }
 
 .resetButton:hover {
-  background-color: #ff3333;
+  background-color: #3a3434;
   transform: translateY(-3px);
 }
 
