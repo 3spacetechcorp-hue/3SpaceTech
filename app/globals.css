@@ -88,13 +88,13 @@ button {
 
 .btn-secondary {
   background-color: transparent;
-  border: 2px solid var(--secondary);
-  color: var(--secondary);
+  border: 2px solid var(--text-primary);
+  color: var(--text-primary);
 }
 
 .btn-secondary:hover {
   background-color: var(--secondary);
-  color: var(--text-primary);
+  border: 2px solid var(--secondary);
   transform: translateY(-3px);
 }
 
