@@ -1,368 +1,44 @@
-"use client";
-
-import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ParallaxBackground from "@/components/ParallaxBackground";
-import styles from "@/styles/Contact.module.css";
-import { motion } from "framer-motion";
-import {
-  FaGlobe,
-  FaLinkedinIn,
-  FaInstagram,
-  FaYoutube,
-  FaXTwitter,
-  FaChevronRight,
-  FaPaperPlane,
-  FaLock,
-  FaUser,
-  FaEnvelope,
-  FaBuilding,
-} from "react-icons/fa6";
-import { Briefcase, FileText, FileBadge, CalendarDays, Rocket, ArrowRight } from "lucide-react";
-
 export default function ContactPage() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    organization: "",
-    subject: "",
-    message: "",
-  });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      // TODO: wire this up to your actual contact API route / email service
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      setStatus("sent");
-      setForm({ name: "", email: "", organization: "", subject: "", message: "" });
-    } catch (err) {
-      setStatus("idle");
-    }
-  };
-
-  const socialLinks = [
-    {
-      key: "website",
-      label: "Website",
-      sub: "Visit our official website",
-      href: "https://www.3space.co",
-      icon: <FaGlobe />,
-      variant: styles.iconWebsite,
-    },
-    {
-      key: "linkedin",
-      label: "LinkedIn",
-      sub: "Connect with us",
-      href: "https://linkedin.com",
-      icon: <FaLinkedinIn />,
-      variant: styles.iconLinkedin,
-    },
-    {
-      key: "instagram",
-      label: "Instagram",
-      sub: "See our latest updates",
-      href: "https://instagram.com",
-      icon: <FaInstagram />,
-      variant: styles.iconInstagram,
-    },
-    {
-      key: "youtube",
-      label: "YouTube",
-      sub: "Watch our videos",
-      href: "https://youtube.com",
-      icon: <FaYoutube />,
-      variant: styles.iconYoutube,
-    },
-    {
-      key: "twitter",
-      label: "X (Twitter)",
-      sub: "Follow our journey",
-      href: "https://x.com",
-      icon: <FaXTwitter />,
-      variant: styles.iconTwitter,
-    },
-  ];
-
-  const exploreCards = [
-    {
-      key: "careers",
-      title: "Careers",
-      text: "Join our team and build the future with us.",
-      cta: "Explore Careers",
-      href: "/careers",
-      icon: <Briefcase size={26} />,
-      variant: styles.exploreCareers,
-    },
-    {
-      key: "blogs",
-      title: "Blogs",
-      text: "Insights, updates and stories from 3Space.",
-      cta: "Read Blogs",
-      href: "/blogs",
-      icon: <FileText size={26} />,
-      variant: styles.exploreBlogs,
-    },
-    {
-      key: "brochure",
-      title: "Company Brochure",
-      text: "Download our brochure to know more about us.",
-      cta: "Download PDF",
-      href: "/brochure.pdf",
-      icon: <FileBadge size={26} />,
-      variant: styles.exploreBrochure,
-    },
-    {
-      key: "events",
-      title: "Events",
-      text: "Check out our upcoming events and activities.",
-      cta: "View Events",
-      href: "/events",
-      icon: <CalendarDays size={26} />,
-      variant: styles.exploreEvents,
-    },
-  ];
-
   return (
-    <>
-      <ParallaxBackground />
-      <Navbar />
-      <main className={styles.contactPage}>
-        {/* Hero */}
-        <section className={styles.hero}>
-          <div className="container">
-            <motion.div
-              className={styles.heroContent}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className={styles.heroEyebrow}>Connect With</span>
-              <h1>
-                <span className={styles.heroAccent}>3</span>SPACE
-              </h1>
-              <p>Building the future of reusable space transportation.</p>
-            </motion.div>
+    <div className="container mx-auto py-20">
+      <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
+      <div className="max-w-2xl mx-auto">
+        <form className="space-y-6">
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+            <input
+              type="text"
+              id="name"
+              className="w-full p-3 rounded-lg bg-card border border-border focus:border-primary outline-none"
+              placeholder="Your name"
+            />
           </div>
-        </section>
-
-        {/* Follow Us + Get In Touch */}
-        <section className={`section ${styles.formsSection}`}>
-          <div className="container">
-            <div className={styles.formsGrid}>
-              {/* Follow Us */}
-              <motion.div
-                className={styles.followCard}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <h2 className={styles.cardTitle}>Follow Us</h2>
-                <div className={styles.cardTitleUnderline} />
-                <div className={styles.socialList}>
-                  {socialLinks.map((link) => (
-                    <a
-                      key={link.key}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.socialItem}
-                    >
-                      <span className={`${styles.socialIcon} ${link.variant}`}>
-                        {link.icon}
-                      </span>
-                      <span className={styles.socialText}>
-                        <span className={styles.socialLabel}>{link.label}</span>
-                        <span className={styles.socialSub}>{link.sub}</span>
-                      </span>
-                      <FaChevronRight className={styles.socialChevron} />
-                    </a>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Get In Touch */}
-              <motion.div
-                className={styles.touchCard}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h2 className={styles.cardTitle}>Get In Touch</h2>
-                <div className={styles.cardTitleUnderline} />
-                <p className={styles.touchIntro}>
-                  We&apos;d love to hear from you! Fill out the form and we&apos;ll get
-                  back to you as soon as possible.
-                </p>
-
-                <form className={styles.contactForm} onSubmit={handleSubmit}>
-                  <div className={styles.formRow}>
-                    <div className={styles.inputGroup}>
-                      <FaUser className={styles.inputIcon} />
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Full Name *"
-                        value={form.name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className={styles.inputGroup}>
-                      <FaEnvelope className={styles.inputIcon} />
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email Address *"
-                        value={form.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className={styles.inputGroup}>
-                    <FaBuilding className={styles.inputIcon} />
-                    <input
-                      type="text"
-                      name="organization"
-                      placeholder="Organization (Optional)"
-                      value={form.organization}
-                      onChange={handleChange}
-                    />
-                  </div>
-
-                  <div className={styles.inputGroup}>
-                    <select
-                      name="subject"
-                      value={form.subject}
-                      onChange={handleChange}
-                      required
-                      className={styles.selectInput}
-                    >
-                      <option value="">Subject *</option>
-                      <option value="general">General Inquiry</option>
-                      <option value="partnership">Partnership</option>
-                      <option value="careers">Careers</option>
-                      <option value="press">Press &amp; Media</option>
-                    </select>
-                  </div>
-
-                  <div className={styles.inputGroup}>
-                    <textarea
-                      name="message"
-                      placeholder="Message *"
-                      rows={5}
-                      value={form.message}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className={styles.submitBtn}
-                    disabled={status === "sending"}
-                  >
-                    <FaPaperPlane />
-                    {status === "sending"
-                      ? "Sending..."
-                      : status === "sent"
-                      ? "Message Sent!"
-                      : "Send Message"}
-                  </button>
-
-                  <p className={styles.privacyNote}>
-                    <FaLock /> Your information is safe with us. We respect your
-                    privacy.
-                  </p>
-                </form>
-              </motion.div>
-            </div>
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+            <input
+              type="email"
+              id="email"
+              className="w-full p-3 rounded-lg bg-card border border-border focus:border-primary outline-none"
+              placeholder="your.email@example.com"
+            />
           </div>
-        </section>
-
-        {/* Explore More */}
-        <section className={`section ${styles.exploreSection}`}>
-          <div className="container">
-            <motion.div
-              className={styles.exploreHeader}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h2 className={styles.exploreTitle}>Explore More</h2>
-              <div className={styles.cardTitleUnderline} style={{ margin: "0 auto" }} />
-            </motion.div>
-
-            <div className={styles.exploreGrid}>
-              {exploreCards.map((card, idx) => (
-                <motion.a
-                  key={card.key}
-                  href={card.href}
-                  className={styles.exploreCard}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.08 * idx }}
-                  viewport={{ once: true }}
-                >
-                  <span className={`${styles.exploreIcon} ${card.variant}`}>
-                    {card.icon}
-                  </span>
-                  <h3>{card.title}</h3>
-                  <p>{card.text}</p>
-                  <span className={styles.exploreLink}>
-                    {card.cta} <ArrowRight size={16} />
-                  </span>
-                </motion.a>
-              ))}
-            </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+            <textarea
+              id="message"
+              rows={6}
+              className="w-full p-3 rounded-lg bg-card border border-border focus:border-primary outline-none"
+              placeholder="Your message"
+            />
           </div>
-        </section>
-
-        {/* CTA Banner */}
-        <section className={styles.ctaBannerSection}>
-          <div className="container">
-            <motion.div
-              className={styles.ctaBanner}
-              initial={{ opacity: 0, scale: 0.97 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <div className={styles.ctaBannerLeft}>
-                <span className={styles.ctaIcon}>
-                  <Rocket size={22} />
-                </span>
-                <div>
-                  <h3>Let&apos;s build the future of space, together.</h3>
-                  <p>
-                    We are always open to new ideas, partnerships and
-                    opportunities.
-                  </p>
-                </div>
-              </div>
-              <a href="/about" className={styles.ctaBannerBtn}>
-                Learn More About 3Space <ArrowRight size={16} />
-              </a>
-            </motion.div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
-}
+          <button
+            type="submit"
+            className="w-full py-3 px-6 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  )
+} 
