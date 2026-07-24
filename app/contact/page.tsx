@@ -7,7 +7,6 @@ import ParallaxBackground from "@/components/ParallaxBackground";
 import styles from "@/styles/Contact.module.css";
 import { motion } from "framer-motion";
 import {
-  FaGlobe,
   FaLinkedinIn,
   FaInstagram,
   FaYoutube,
@@ -57,14 +56,7 @@ export default function ContactPage() {
   };
 
   const socialLinks = [
-    {
-      key: "website",
-      label: "Website",
-      sub: "Visit our official website",
-      href: "https://www.3space.co",
-      icon: <FaGlobe />,
-      variant: styles.iconWebsite,
-    },
+   
     {
       key: "linkedin",
       label: "LinkedIn",
