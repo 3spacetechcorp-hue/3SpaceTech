@@ -19,8 +19,13 @@ import {
   FaEnvelope,
   FaBuilding,
 } from "react-icons/fa6";
-import { Briefcase, FileText, FileBadge, CalendarDays, Rocket, ArrowRight } from "lucide-react";
-
+import {
+  Briefcase,
+  FileText,
+  CalendarDays,
+  Rocket,
+  ArrowRight,
+} from "lucide-react";
 export default function ContactPage() {
   const [form, setForm] = useState({
     name: "",
@@ -46,9 +51,9 @@ export default function ContactPage() {
       await new Promise((resolve) => setTimeout(resolve, 800));
       setStatus("sent");
       setForm({ name: "", email: "", organization: "", subject: "", message: "" });
-    } catch (err) {
-      setStatus("idle");
-    }
+} catch {
+  setStatus("idle");
+}
   };
 
   const socialLinks = [
@@ -118,8 +123,8 @@ export default function ContactPage() {
       title: "Company Brochure",
       text: "Download our brochure to know more about us.",
       cta: "Download PDF",
-      href: "/brochure.pdf",
-      icon: <FileBadge size={26} />,
+      href: "#",
+      icon: <FileText size={26} />,
       variant: styles.exploreBrochure,
     },
     {
