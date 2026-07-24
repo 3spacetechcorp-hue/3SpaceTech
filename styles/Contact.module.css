@@ -1,0 +1,633 @@
+/* ============================================================
+   Contact Page – 3Space
+   A dark, space-themed contact page with glassmorphism,
+   subtle neon accents, and smooth hover transitions.
+   ============================================================ */
+
+/* ---------- Page wrapper ---------- */
+.contactPage {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding-top: 6rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 5rem 0 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.heroContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.heroEyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent, #8338ec);
+  margin-bottom: 1rem;
+  background: rgba(131, 56, 236, 0.12);
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(131, 56, 236, 0.2);
+}
+
+.heroContent h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary, #ffffff);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.heroAccent {
+  color: var(--accent, #8338ec);
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  color: var(--text-secondary, #b0b7c3);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ---------- Forms section (Follow + Touch) ---------- */
+.formsSection {
+  padding: 3rem 0 5rem;
+}
+
+.formsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .formsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ---------- Shared card styles ---------- */
+.followCard,
+.touchCard {
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.25rem;
+  padding: 2.25rem 2rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.followCard:hover,
+.touchCard:hover {
+  border-color: rgba(131, 56, 236, 0.2);
+  box-shadow: 0 8px 32px rgba(131, 56, 236, 0.06);
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary, #ffffff);
+  margin-bottom: 0.5rem;
+}
+
+.cardTitleUnderline {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent, #8338ec), #a855f7);
+  border-radius: 2px;
+  margin-bottom: 1.75rem;
+}
+
+/* ---------- Follow Us – Social links ---------- */
+.socialList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.socialItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: var(--text-primary, #ffffff);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.socialItem:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+}
+
+.socialIcon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.socialItem:hover .socialIcon {
+  transform: scale(1.1);
+}
+
+/* Individual social icon variants */
+.iconWebsite {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.iconLinkedin {
+  background: rgba(10, 102, 194, 0.15);
+  color: #0a66c2;
+}
+
+.iconInstagram {
+  background: rgba(228, 64, 95, 0.15);
+  color: #e4405f;
+}
+
+.iconYoutube {
+  background: rgba(255, 0, 0, 0.15);
+  color: #ff0000;
+}
+
+.iconTwitter {
+  background: rgba(29, 161, 242, 0.15);
+  color: #1da1f2;
+}
+
+.socialText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.socialLabel {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.socialSub {
+  font-size: 0.8rem;
+  color: var(--text-secondary, #b0b7c3);
+}
+
+.socialChevron {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #b0b7c3);
+  opacity: 0.4;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.socialItem:hover .socialChevron {
+  opacity: 0.9;
+  transform: translateX(3px);
+}
+
+/* ---------- Get In Touch – Form ---------- */
+.touchIntro {
+  color: var(--text-secondary, #b0b7c3);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-secondary, #b0b7c3);
+  font-size: 0.9rem;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.inputGroup input,
+.inputGroup textarea,
+.selectInput {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 2.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.7rem;
+  color: var(--text-primary, #ffffff);
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus,
+.selectInput:focus {
+  border-color: var(--accent, #8338ec);
+  box-shadow: 0 0 0 3px rgba(131, 56, 236, 0.12);
+  background: rgba(131, 56, 236, 0.04);
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.inputGroup textarea {
+  resize: vertical;
+  min-height: 110px;
+  padding-top: 0.9rem;
+}
+
+/* Override icon offset for textarea – icon is for the first input only */
+.inputGroup:has(textarea) .inputIcon {
+  display: none;
+}
+
+.selectInput {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23b0b7c3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.selectInput option {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+/* ---------- Submit button ---------- */
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent, #8338ec), #a855f7);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, opacity 0.2s ease;
+  box-shadow: 0 4px 20px rgba(131, 56, 236, 0.25);
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(131, 56, 236, 0.35);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ---------- Privacy note ---------- */
+.privacyNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary, #b0b7c3);
+  margin-top: 0.25rem;
+  opacity: 0.7;
+}
+
+/* ---------- Explore More section ---------- */
+.exploreSection {
+  padding: 4rem 0 5rem;
+}
+
+.exploreHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.exploreTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary, #ffffff);
+  margin-bottom: 0.5rem;
+}
+
+.exploreGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .exploreGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .exploreGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.exploreCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.75rem 1.5rem;
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--text-primary, #ffffff);
+  transition: all 0.3s ease;
+}
+
+.exploreCard:hover {
+  border-color: rgba(131, 56, 236, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.exploreIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.exploreCard:hover .exploreIcon {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* Individual explore card icon variants */
+.exploreCareers {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.exploreBlogs {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.exploreBrochure {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.exploreEvents {
+  background: rgba(236, 72, 153, 0.15);
+  color: #ec4899;
+}
+
+.exploreCard h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.exploreCard p {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #b0b7c3);
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+
+.exploreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent, #8338ec);
+  transition: gap 0.25s ease;
+}
+
+.exploreCard:hover .exploreLink {
+  gap: 0.65rem;
+}
+
+/* ---------- CTA Banner ---------- */
+.ctaBannerSection {
+  padding: 2rem 0 5rem;
+}
+
+.ctaBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, rgba(131, 56, 236, 0.08), rgba(168, 85, 247, 0.04));
+  border: 1px solid rgba(131, 56, 236, 0.15);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .ctaBanner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+.ctaBannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .ctaBannerLeft {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.ctaIcon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(131, 56, 236, 0.15);
+  color: var(--accent, #8338ec);
+}
+
+.ctaBannerLeft h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary, #ffffff);
+  margin: 0 0 0.25rem;
+}
+
+.ctaBannerLeft p {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #b0b7c3);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ctaBannerBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent, #8338ec);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0.7rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 16px rgba(131, 56, 236, 0.2);
+}
+
+.ctaBannerBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(131, 56, 236, 0.3);
+}
+
+@media (max-width: 768px) {
+  .ctaBannerBtn {
+    white-space: normal;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 768px) {
+  .contactPage {
+    padding-top: 4rem;
+  }
+
+  .hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+  }
+
+  .followCard,
+  .touchCard {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.35rem;
+  }
+
+  .exploreTitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 2.4rem;
+  }
+
+  .heroEyebrow {
+    font-size: 0.75rem;
+    padding: 0.3rem 1rem;
+  }
+
+  .socialItem {
+    padding: 0.7rem 0.85rem;
+  }
+
+  .socialIcon {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .submitBtn {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .exploreCard {
+    padding: 1.25rem 1rem;
+  }
+
+  .ctaBanner {
+    padding: 1.25rem 1rem;
+  }
+}
