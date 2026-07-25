@@ -92,8 +92,8 @@ export default function ContactPage() {
     {
   key: "contact-email",
   label: "Contact Email",
-  sub: "contactus@3spacecorp.com",
-  href: "mailto:contactus@3spacecorp.com",
+  sub: "contactus@a3spacetech.com",
+  href: "mailto:contactus@a3spacetech.com",
   icon: <FaEnvelope />,
   variant: styles.iconEmail,
 },
@@ -265,11 +265,17 @@ export default function ContactPage() {
                       required
                       className={styles.selectInput}
                     >
-                      <option value="">Subject *</option>
+                      <option value="">Subject options*</option>
                       <option value="general">General Inquiry</option>
                       <option value="partnership">Partnership</option>
+                      <option value="sponsorship">Sponsorship</option>
+                      <option value="investor-relations">Investor Relations</option>
+                      <option value="collaboration">Collaboration</option>
                       <option value="careers">Careers</option>
-                      <option value="press">Press &amp; Media</option>
+                      <option value="internship">Internship</option>
+                      <option value="media-pr">Media &amp; PR</option>
+                      <option value="technical-query">Technical Query</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
 
