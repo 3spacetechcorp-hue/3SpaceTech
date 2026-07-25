@@ -89,6 +89,22 @@ export default function ContactPage() {
       icon: <FaXTwitter />,
       variant: styles.iconTwitter,
     },
+    {
+  key: "contact-email",
+  label: "Contact Email",
+  sub: "contactus@3spacecorp.com",
+  href: "mailto:contactus@3spacecorp.com",
+  icon: <FaEnvelope />,
+  variant: styles.iconEmail,
+},
+{
+  key: "career-email",
+  label: "Career Email",
+  sub: "careers@3spacecorp.com",
+  href: "mailto:careers@3spacecorp.com",
+  icon: <FaEnvelope />,
+  variant: styles.iconEmail,
+},
   ];
 
   const exploreCards = [
