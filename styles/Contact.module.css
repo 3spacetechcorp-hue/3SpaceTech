@@ -30,13 +30,13 @@
   font-weight: 600;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--accent, #8338ec);
+  color: #fff;
   margin-bottom: 1rem;
-  background: rgba(131, 56, 236, 0.12);
+  background: transparent;
   padding: 0.4rem 1.2rem;
   border-radius: 999px;
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(131, 56, 236, 0.2);
+  border: 1px solid #1a1a1a;
 }
 
 .heroContent h1 {
@@ -49,7 +49,7 @@
 }
 
 .heroAccent {
-  color: var(--accent, #8338ec);
+  color: #fff;
 }
 
 .heroContent p {
@@ -87,8 +87,8 @@
 
 .followCard:hover,
 .touchCard:hover {
-  border-color: rgba(131, 56, 236, 0.2);
-  box-shadow: 0 8px 32px rgba(131, 56, 236, 0.06);
+  border-color: #d7d7d756;
+  
 }
 
 .cardTitle {
@@ -101,7 +101,7 @@
 .cardTitleUnderline {
   width: 48px;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent, #8338ec), #a855f7);
+  background: #d7d7d7;
   border-radius: 2px;
   margin-bottom: 1.75rem;
 }
@@ -150,11 +150,6 @@
 }
 
 /* Individual social icon variants */
-.iconWebsite {
-  background: rgba(59, 130, 246, 0.15);
-  color: #3b82f6;
-}
-
 .iconLinkedin {
   background: rgba(10, 102, 194, 0.15);
   color: #0a66c2;
@@ -260,9 +255,7 @@
 .inputGroup input:focus,
 .inputGroup textarea:focus,
 .selectInput:focus {
-  border-color: var(--accent, #8338ec);
-  box-shadow: 0 0 0 3px rgba(131, 56, 236, 0.12);
-  background: rgba(131, 56, 236, 0.04);
+  border-color: #d7d7d756;
 }
 
 .inputGroup input::placeholder,
@@ -305,7 +298,7 @@
   gap: 0.6rem;
   width: 100%;
   padding: 0.95rem 1.5rem;
-  background: linear-gradient(135deg, var(--accent, #8338ec), #a855f7);
+  background-color: var(--secondary);
   color: #ffffff;
   font-size: 1.05rem;
   font-weight: 600;
@@ -313,12 +306,11 @@
   border-radius: 0.7rem;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.25s ease, opacity 0.2s ease;
-  box-shadow: 0 4px 20px rgba(131, 56, 236, 0.25);
 }
 
 .submitBtn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(131, 56, 236, 0.35);
+     background-color: #3a3434; 
 }
 
 .submitBtn:active:not(:disabled) {
@@ -383,7 +375,7 @@
 }
 
 .exploreCard:hover {
-  border-color: rgba(131, 56, 236, 0.2);
+  border-color: #d7d7d756;
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
@@ -444,12 +436,14 @@
   gap: 0.4rem;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--accent, #8338ec);
+  color: #fff;
+  opacity: 0.8;
   transition: gap 0.25s ease;
 }
 
 .exploreCard:hover .exploreLink {
   gap: 0.65rem;
+  opacity: 1;
 }
 
 /* ---------- CTA Banner ---------- */
@@ -463,10 +457,10 @@
   justify-content: space-between;
   gap: 2rem;
   padding: 2rem 2.5rem;
-  background: linear-gradient(135deg, rgba(131, 56, 236, 0.08), rgba(168, 85, 247, 0.04));
-  border: 1px solid rgba(131, 56, 236, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(14px);
   border-radius: 1.25rem;
-  backdrop-filter: blur(10px);
 }
 
 
@@ -486,7 +480,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(131, 56, 236, 0.15);
+  background: rgba(191, 186, 198, 0.15);
   color: var(--accent, #8338ec);
 }
 
@@ -509,7 +503,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: var(--accent, #8338ec);
+  background-color: var(--secondary);
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 600;
@@ -522,7 +516,7 @@
 
 .ctaBannerBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(131, 56, 236, 0.3);
+     background-color: #3a3434;
 }
 
 
