@@ -164,6 +164,10 @@
   background: rgba(255, 0, 0, 0.15);
   color: #ff0000;
 }
+.iconEmail {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
 
 .iconTwitter {
   background: rgba(29, 161, 242, 0.15);
