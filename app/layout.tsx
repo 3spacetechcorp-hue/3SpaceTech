@@ -1,8 +1,9 @@
 import Script from "next/script"
 import type React from "react"
 import { Inter } from "next/font/google"
-import "app\globals.css"
-// import CustomCursor from "@/components/CustomCursor"
+// Ignore missing type declarations for global CSS import
+// @ts-ignore
+import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
