@@ -17,6 +17,7 @@ import {
   FaUser,
   FaEnvelope,
   FaBuilding,
+  FaWhatsapp ,
 } from "react-icons/fa6";
 import {
   Briefcase,
@@ -351,6 +352,48 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+        {/* WhatsApp Community */}
+<section className={styles.whatsappSection}>
+  <div className="container">
+    <motion.div
+      className={styles.whatsappCard}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <div className={styles.whatsappContent}>
+        <div className={styles.whatsappIcon}>
+          <FaWhatsapp />
+        </div>
+
+        <div className={styles.whatsappText}>
+          <span className={styles.whatsappEyebrow}>
+            STAY CONNECTED
+          </span>
+
+          <h2>Join Our WhatsApp Community</h2>
+
+          <p>
+            Stay updated with the latest news, events, opportunities,
+            and updates from 3SPACE.
+          </p>
+        </div>
+
+        <a
+          href="https://chat.whatsapp.com/KPNqWjNCZtv8p7pcmt2GFm?s=sh&p=a&ilr=1"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary"
+        >
+          <FaWhatsapp />
+          Join WhatsApp
+          <ArrowRight size={17} />
+        </a>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
         {/* CTA Banner */}
         <section className={styles.ctaBannerSection}>
