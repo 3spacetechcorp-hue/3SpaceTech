@@ -380,7 +380,6 @@ export default function ContactPage() {
   className="btn btn-primary"
  
 >
-  <FaWhatsapp />
   Join WhatsApp
   <ArrowRight size={17} />
 </a>
