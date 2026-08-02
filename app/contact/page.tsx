@@ -353,7 +353,7 @@ export default function ContactPage() {
           </div>
         </section>
         {/* WhatsApp Community */}
-<section className={styles.whatsappSection}>
+         <section className={styles.whatsappSection}>
   <div className="container">
     <motion.div
       className={styles.whatsappCard}
@@ -362,35 +362,34 @@ export default function ContactPage() {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <div className={styles.whatsappContent}>
-        <div className={styles.whatsappIcon}>
-          <FaWhatsapp />
-        </div>
+      <h2 className="section-title">
+        Join Our WhatsApp Community
+      </h2>
 
-        <div className={styles.whatsappText}>
-          <span className={styles.whatsappEyebrow}>
-            STAY CONNECTED
-          </span>
+      <p className="section-subtitle">
+        Stay updated with the latest news, events, opportunities,
+        and updates from 3SPACE.
+      </p>
 
-          <h2>Join Our WhatsApp Community</h2>
-
-          <p>
-            Stay updated with the latest news, events, opportunities,
-            and updates from 3SPACE.
-          </p>
-        </div>
-
-        <a
-          href="https://chat.whatsapp.com/KPNqWjNCZtv8p7pcmt2GFm?s=sh&p=a&ilr=1"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary"
-        >
-          <FaWhatsapp />
-          Join WhatsApp
-          <ArrowRight size={17} />
-        </a>
+      <div
+        style={{ marginBottom: "20px" }}
+        className={styles.whatsappText}
+      >
+        <span className={styles.whatsappEyebrow}>
+          STAY CONNECTED
+        </span>
       </div>
+
+      <a
+        href="https://chat.whatsapp.com/KPNqWjNCZtv8p7pcmt2GFm?s=sh&p=a&ilr=1"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn btn-primary"
+      >
+        <FaWhatsapp />
+        Join WhatsApp
+        <ArrowRight size={17} />
+      </a>
     </motion.div>
   </div>
 </section>
