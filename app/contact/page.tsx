@@ -370,19 +370,21 @@ export default function ContactPage() {
         Stay updated with the latest news, events, opportunities,
         and updates from 3SPACE.
       </p>
+      <div  style={{
+    textAlign: "center",
+  }}>
       <a
   href="https://chat.whatsapp.com/KPNqWjNCZtv8p7pcmt2GFm?s=sh&p=a&ilr=1"
   target="_blank"
   rel="noopener noreferrer"
   className="btn btn-primary"
-  style={{
-    textAlign: "center",
-  }}
+ 
 >
   <FaWhatsapp />
   Join WhatsApp
   <ArrowRight size={17} />
 </a>
+        </div>
     </motion.div>
   </div>
 </section>
