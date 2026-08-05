@@ -207,6 +207,7 @@ export default function ContactPage() {
               </motion.div>
 
               {/* Get In Touch */}
+              {/*
               <motion.div
                 className={styles.touchCard}
                 initial={{ opacity: 0, y: 30 }}
