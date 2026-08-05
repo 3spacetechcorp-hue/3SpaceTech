@@ -90,7 +90,7 @@ export async function POST(req: Request) {
 
     const savedToSharedSheet = await saveToSharedSheet(body);
     if (savedToSharedSheet) {
-      return NextResponse.json({ message: 'Your message was saved successfully.' });
+      return NextResponse.json({ message: 'Your message was saved successfully to the shared sheet.' });
     }
 
     const filePath = await saveToCsv(body);
