@@ -1,0 +1,66 @@
+.splashContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.companyTitle {
+  position: absolute;
+  top: 65%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.companyTitle h1 {
+  font-family: 'Orbitron', 'Arial', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.companyTitle p {
+  font-family: 'Rajdhani', 'Arial', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.skipButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.skipButton:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .companyTitle h1 {
+    font-size: 3rem;
+  }
+
+  .companyTitle p {
+    font-size: 1rem;
+  }
+}

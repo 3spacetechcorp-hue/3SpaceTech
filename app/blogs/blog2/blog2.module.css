@@ -1,0 +1,333 @@
+.blogContainer {
+  max-width: 1200px;
+  margin: 100px auto 0;
+  padding: 20px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+}
+
+.blogMainContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.blogSidebar {
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+.blogHeader {
+  text-align: center;
+  margin-bottom: 40px;
+  grid-column: 1 / -1;
+}
+
+.blogHeader h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #fff;
+  line-height: 1.3;
+  background: linear-gradient(135deg, #fff 0%, #8fa1c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #aaa;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.blogImageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5rem 0 2rem 0;
+}
+
+.blogMainImage {
+  max-width: 100%;
+  width: 60%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  border: 8px solid #23272f;
+  background: #181a20;
+  box-shadow:
+    0 6px 32px rgba(0,0,0,0.18),
+    0 2px 12px rgba(58,134,255,0.10),
+    0 0 0 16px #101217 inset;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.blogMainImage:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 12px 48px rgba(58,134,255,0.18),
+    0 4px 24px rgba(0,0,0,0.12),
+    0 0 0 16px #101217 inset;
+}
+
+.imageCaption {
+  margin-top: 0.7rem;
+  color: #8fa1c7;
+  font-size: 1.05rem;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* Content Cards */
+.contentCard {
+  background: linear-gradient(135deg, rgba(15, 15, 25, 0.9) 0%, rgba(25, 25, 35, 0.8) 100%);
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(143, 161, 199, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.contentCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffffff, #ffffff, #ffffff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contentCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(143, 161, 199, 0.2);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
+}
+
+.contentCard:hover::before {
+  opacity: 1;
+}
+
+.contentCard h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contentCard h2::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(45deg, #ffffff, #ffffff);
+  border-radius: 2px;
+}
+
+.contentCard p {
+  line-height: 1.8;
+  color: #e2e8f0;
+  margin-bottom: 0;
+}
+
+/* Intro Section Special Styling */
+.introCard {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Conclusion Section Special Styling */
+.conclusionCard {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  position: relative;
+}
+
+.conclusionCard::after {
+  content: '🚀';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+/* Sidebar Styles */
+.sidebarCard {
+  background: linear-gradient(135deg, rgba(15, 15, 25, 0.9) 0%, rgba(25, 25, 35, 0.8) 100%);
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(143, 161, 199, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.sidebarCard h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.keyHighlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.keyHighlights li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(143, 161, 199, 0.1);
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  position: relative;
+  padding-left: 15px;
+}
+
+.keyHighlights li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+}
+
+.keyHighlights li:last-child {
+  border-bottom: none;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.statItem {
+  text-align: center;
+  padding: 15px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.statNumber {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  display: block;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 5px;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(15, 15, 25, 0.9) 0%, rgba(25, 25, 35, 0.8) 100%);
+  border-radius: 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(143, 161, 199, 0.1);
+}
+
+/* .authorAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ffffff, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+} */
+
+.authorDetails h4 {
+  margin: 0 0 5px 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.authorDetails p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.readingProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+  transform-origin: left;
+  z-index: 1000;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .blogContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+    margin-top: 80px;
+  }
+  
+  .blogSidebar {
+    position: static;
+    order: -1;
+  }
+  
+  .blogHeader h1 {
+    font-size: 2.2rem;
+  }
+  
+  .contentCard {
+    padding: 20px;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .blogMainImage {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogHeader h1 {
+    font-size: 1.8rem;
+  }
+  
+  .contentCard {
+    padding: 15px;
+  }
+  
+  .sidebarCard {
+    padding: 20px;
+  }
+}

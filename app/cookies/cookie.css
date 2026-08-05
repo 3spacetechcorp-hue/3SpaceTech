@@ -1,0 +1,270 @@
+/* cookie.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.8;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  min-height: 100vh;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.text-4xl {
+  font-size: 2.75rem;
+  font-weight: 200;
+  margin: 0;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-rendering: optimizeLegibility;
+  text-align: center;
+  margin-bottom: 80px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #1a1a1a;
+  position: relative;
+}
+
+.text-4xl::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background-color: #333333;
+}
+
+.font-bold {
+  font-weight: 300;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.prose {
+  max-width: none;
+}
+
+.prose-invert {
+  color: #ffffff;
+}
+
+.max-w-none {
+  max-width: none;
+}
+
+.prose p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 20px;
+  line-height: 1.75;
+}
+
+.prose p:first-of-type {
+  font-size: 1.125rem;
+  color: #b3b3b3;
+  margin-bottom: 60px;
+  padding: 32px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
+  border-radius: 12px;
+  border: 1px solid #1a1a1a;
+  position: relative;
+  overflow: hidden;
+}
+
+.prose p:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #333333, transparent);
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 28px;
+  margin-top: 60px;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.prose h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 1px;
+  background-color: #333333;
+}
+
+.prose ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.prose li {
+  margin-bottom: 16px;
+  padding-left: 28px;
+  position: relative;
+  color: #cccccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: color 0.2s ease;
+}
+
+.prose li:before {
+  content: "•";
+  color: #666666;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
+}
+
+.prose li:hover {
+  color: #e6e6e6;
+}
+
+.prose a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid #444444;
+  transition: all 0.3s ease;
+  padding-bottom: 1px;
+}
+
+.text-blue-400 {
+  color: #ffffff;
+}
+
+.hover\:underline:hover {
+  border-bottom-color: #ffffff;
+}
+
+.prose b,
+.prose strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #333333, transparent);
+  margin: 40px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 60px 20px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 16px 30px;
+  }
+  
+  .text-4xl {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+  }
+  
+  .prose p:first-of-type {
+    padding: 24px;
+    font-size: 1rem;
+    margin-bottom: 50px;
+  }
+  
+  .prose h2 {
+    font-size: 1.375rem;
+    margin-bottom: 24px;
+    margin-top: 50px;
+  }
+  
+  .prose li {
+    padding-left: 24px;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-4xl {
+    font-size: 1.875rem;
+  }
+  
+  .prose p:first-of-type {
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .prose li {
+    padding-left: 20px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .prose a,
+  .prose li {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  body {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .prose p:first-of-type {
+    background: #111111;
+    border-color: #333333;
+  }
+  
+  .prose a {
+    border-bottom-color: #ffffff;
+  }
+}

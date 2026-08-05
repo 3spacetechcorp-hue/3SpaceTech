@@ -1,0 +1,197 @@
+.rocketsHero {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/rocket-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  z-index: 2;
+}
+
+.heroContent h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, #3a86ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heroContent p {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+}
+
+.rocketsSection {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(5, 7, 20, 0.9);
+}
+
+.rocketSelector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.rocketBtn {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.rocketBtn.active {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  border-color: var(--primary);
+}
+
+.rocketBtn:hover:not(.active) {
+  background-color: rgba(58, 134, 255, 0.1);
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.rocketDisplay {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.rocketModel {
+  height: 500px;
+  background-color: rgba(15, 23, 41, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.rocketInfo {
+  padding: 2rem;
+  background-color: var(--card);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.rocketInfo h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.rocketDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.rocketSpecs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.specItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.specIcon {
+  background-color: rgba(58, 134, 255, 0.1);
+  color: var(--secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.specContent h3 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.specContent p {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.rocketTechSection {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(15, 23, 41, 0.8);
+}
+
+.techCard {
+  background-color: var(--card);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  height: 100%;
+}
+
+.techCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.techCard p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 992px) {
+  .rocketDisplay {
+    grid-template-columns: 1fr;
+  }
+
+  .rocketModel {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rocketSelector {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rocketBtn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .rocketSpecs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .rocketInfo h2 {
+    font-size: 2rem;
+  }
+}

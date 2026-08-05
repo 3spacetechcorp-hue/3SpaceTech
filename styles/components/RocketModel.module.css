@@ -1,0 +1,143 @@
+/* overall page wrapper */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #000;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  /* consistent across all devices */
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 100%;
+}
+
+/* main title */
+.title {
+  font-size: 3rem;
+  /* consistent size */
+  margin: 25px 0 0;
+  /* top margin to push down from navbar */
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* subtitle under title */
+.subtitle {
+  font-size: 1.25rem;
+  /* consistent size */
+  margin: 1rem 0 1rem;
+  /* consistent gap above & below */
+  opacity: 0.85;
+}
+
+/* CALL‑OUT SECTION */
+.callout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  padding: 1rem 1rem;
+  /* consistent padding */
+  margin-top: -2rem;
+  /* consistent pull‑up */
+  text-align: center;
+}
+
+.calloutInner {
+  max-width: 600px;
+  width: 100%;
+}
+
+.calloutText {
+  color: #fff;
+  font-size: 1.125rem;
+  /* consistent size */
+  margin: 0;
+  opacity: 0.9;
+  padding-bottom: 15px;
+  /* consistent bottom padding */
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .callout {
+    padding: 0.75rem 1rem;
+    margin-top: -1.5rem;
+  }
+
+  .calloutText {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 45vh;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin: 0.4rem 0 0.8rem;
+  }
+
+  .callout {
+    padding: 0.5rem 1rem;
+    margin-top: -1rem;
+  }
+
+  .calloutText {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 40vh;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin: 0.3rem 0 0.6rem;
+  }
+
+  .callout {
+    padding: 0.5rem 0.5rem;
+    margin-top: -0.8rem;
+  }
+
+  .calloutText {
+    font-size: 0.85rem;
+  }
+}
