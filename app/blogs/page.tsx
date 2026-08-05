@@ -1,11 +1,10 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { motion } from "framer-motion"
 import ParallaxBackground from "@/components/ParallaxBackground"
 import styles from "@/styles/Blogs.module.css"
 import { Calendar, User, Clock, ArrowRight } from "lucide-react"
-import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import Link from "next/link"
 
@@ -18,7 +17,7 @@ export default function BlogsPage() {
       slug: "blog4",
       title: "What If Gen Z Ran Space Missions?",
       excerpt:
-        "Imagine you’re hurtling toward Mars, your favorite playlist still pumping through the cabin. At 3space, we believe the next generation’s take on space exploration would look—and feel—completely different. ",
+        "Imagine youâ€™re hurtling toward Mars, your favorite playlist still pumping through the cabin. At 3space, we believe the next generationâ€™s take on space exploration would lookâ€”and feelâ€”completely different. ",
       date: "Aug 10, 2024",
       author: "3Space",
       readTime: "1 min read",
@@ -54,7 +53,7 @@ export default function BlogsPage() {
       slug: "blog2",
       title: "Women in Indian Space: A Journey of Excellence and Empowerment",
       excerpt:
-        "Indian women are redefining space science — at 3SPACE, we celebrate their legacy and fuel the dreams of future pioneers.",
+        "Indian women are redefining space science â€” at 3SPACE, we celebrate their legacy and fuel the dreams of future pioneers.",
       date: "June 24, 2024",
       author: "3Space",
       readTime: "1 min read",
@@ -149,7 +148,7 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      <Footer />
-    </>
+          </>
   )
 }
+

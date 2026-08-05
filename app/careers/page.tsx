@@ -1,11 +1,10 @@
-"use client"
+﻿"use client"
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import ParallaxBackground from "@/components/ParallaxBackground"
 import Navbar from "@/components/Navbar"
 import styles from "@/styles/Careers.module.css"
-import Footer from "@/components/Footer"
 import { MapPin, Briefcase, Clock, ChevronDown, ChevronUp, Search } from "lucide-react"
 import Link from "next/link"
 
@@ -113,7 +112,7 @@ export default function CareersPage() {
         "Document technical processes, code, and system behavior."
       ],
       requirements: [
-        " Bachelor’s or Master’s in Electronics, Electrical, or a related electronics field",
+        " Bachelorâ€™s or Masterâ€™s in Electronics, Electrical, or a related electronics field",
         "Basic understanding of wireless communication protocols.",
         "Strong grasp of error detection/correction techniques like CRC, ARQ, and Sliding Window Protocol.",
         "Familiar with microcontroller protocols such as SPI, I2C, and UART.",
@@ -411,7 +410,7 @@ export default function CareersPage() {
             >
               <h3>Meaningful Work</h3>
               <p>
-              Join a mission advancing India’s role in global space and shaping humanity’s future.
+              Join a mission advancing Indiaâ€™s role in global space and shaping humanityâ€™s future.
 
               </p>
             </motion.div>
@@ -458,8 +457,7 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
-      <Footer />
-      
+            
     </>
   )
 }

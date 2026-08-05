@@ -1,8 +1,7 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import ParallaxBackground from "@/components/ParallaxBackground";
 import styles from "@/styles/Contact.module.css";
 import { motion } from "framer-motion";
@@ -47,13 +46,29 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("sending");
     try {
-      // TODO: wire this up to your actual contact API route / email service
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      setStatus("sent");
-      setForm({ name: "", email: "", organization: "", subject: "", message: "" });
-} catch {
-  setStatus("idle");
-}
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        throw new Error(errorData?.message || 'Unable to send your message. Please try again later.');
+      }
+
+      const data = await response.json();
+      setStatus('sent');
+      setForm({ name: '', email: '', organization: '', subject: '', message: '' });
+      alert(data.message || 'Message sent successfully.');
+    } catch (error) {
+      console.error('Contact form submit error:', error);
+      setStatus('idle');
+      alert(error instanceof Error ? error.message : 'There was a problem sending your message.');
+    }
   };
 
   const socialLinks = [
@@ -417,7 +432,7 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+          </>
   );
 } 
+

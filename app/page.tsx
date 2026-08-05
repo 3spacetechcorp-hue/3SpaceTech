@@ -1,8 +1,7 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import LaunchCountdown from "@/components/LaunchCountdown";
 // import CollaborativeNetworkSection from "@/components/collab";
 import styles from "@/styles/Home.module.css";
@@ -31,7 +30,7 @@ export default function Home() {
       id: 1,
       title: "What are our main products and services?",
       question: "What are our main products and services?",
-      answer: "We offer reusable rockets, satellite launch services, payload deployment, simulation-based design, 3D-printed components, and educational rocketry kits—providing scalable, cost-effective solutions for commercial clients, researchers, and space enthusiasts.",
+      answer: "We offer reusable rockets, satellite launch services, payload deployment, simulation-based design, 3D-printed components, and educational rocketry kitsâ€”providing scalable, cost-effective solutions for commercial clients, researchers, and space enthusiasts.",
       difficulty: "General",
     },
     {
@@ -52,7 +51,7 @@ export default function Home() {
       id: 4,
       title: "How can you contact our team for business or technical inquiries?",
       question: "How can you contact our team for business or technical inquiries?",
-      answer: "You can contact us using the email addresses provided below, or simply fill out the contact form with your query—we’ll get back to you as soon as possible.",
+      answer: "You can contact us using the email addresses provided below, or simply fill out the contact form with your queryâ€”weâ€™ll get back to you as soon as possible.",
       difficulty: "Contact",
     },
   ];
@@ -95,7 +94,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <h1>Welcome to 3SPACE</h1>
-                <p>Building Tomorrow's Launch Technologies, Today — with reusable rockets and next-gen aerospace systems.</p>
+                <p>Building Tomorrow's Launch Technologies, Today â€” with reusable rockets and next-gen aerospace systems.</p>
                 <div className={styles.heroBtns} style={{ position: 'relative', display: 'inline-block' }}>
                   <a href="/about" className="btn btn-primary" style={{ position: 'relative', zIndex: 2 }}>
                     <div className={styles.competitionButtonContent}>
@@ -153,7 +152,7 @@ export default function Home() {
                 {
                   icon: <FaFlask size={32} style={iconStyle} />,
                   title: "Research & Development",
-                  text: "Pioneering advances in propulsion, materials, and space living systems.",
+                  text: "Pioneering advances in propulsion, materials, and spaceÂ livingÂ systems.",
                 },
               ].map((feature, idx) => (
                 <motion.div
@@ -251,7 +250,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+          </>
   );
 }
+

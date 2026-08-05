@@ -50,8 +50,7 @@ const emailLinks = [
 export default function Footer() {
   const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const API_URL = 'https://threespacebackend.onrender.com';
-  // const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL ?? '/api';
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -66,9 +65,9 @@ export default function Footer() {
     try {
       console.log('Sending request with data:', formData); // Debug log
       
-      const response = await fetch('https://threespacebackend.onrender.com/api/contact', {
+      const response = await fetch(`${API_URL}/contact`, {
         method: 'POST',
-        headers: { 
+        headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -204,7 +203,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Form */}
+          {/* Form 
           <motion.div 
             className={styles.footerForm}
             initial={{ y: 20 }}
@@ -253,6 +252,7 @@ export default function Footer() {
               </motion.button>
             </form>
           </motion.div>
+           */}
         </motion.div>
 
         {/* Bottom */}

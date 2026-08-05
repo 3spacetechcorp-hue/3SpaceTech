@@ -1,10 +1,9 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Search, Filter, X } from 'lucide-react';
 import '../../styles/components/faqs.css'; 
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 interface FAQ {
   id: number;
@@ -57,7 +56,7 @@ export default function FAQPage() {
       id: 6,
       title: "Future Goals",
       question: "What are 3Space Tech's future goals?",
-      answer: "3Space aims to cross the Karman Line in the first year, achieve sub-orbital launches by year two, and complete orbital reusable launches by year five—positioning themselves as leaders in India and Asia for vertical landing and satellite deployment.",
+      answer: "3Space aims to cross the Karman Line in the first year, achieve sub-orbital launches by year two, and complete orbital reusable launches by year fiveâ€”positioning themselves as leaders in India and Asia for vertical landing and satellite deployment.",
       category: "Vision"
     },
     {
@@ -71,21 +70,21 @@ export default function FAQPage() {
       id: 8,
       title: "Career Opportunities",
       question: "Are there internship or career opportunities at 3Space Tech?",
-      answer: "We welcome interns and enthusiasts passionate about space. While not formally listed, opportunities may exist in rocketry, payload, design, and R&D—reach out to explore roles.",
+      answer: "We welcome interns and enthusiasts passionate about space. While not formally listed, opportunities may exist in rocketry, payload, design, and R&Dâ€”reach out to explore roles.",
       category: "Careers"
     },
     {
       id: 9,
       title: "Sustainability",
       question: "What is our approach to space sustainability and responsible innovation?",
-      answer: "We prioritize reusability, minimize launch costs, and promote inclusive innovation through education and partnerships—ensuring sustainable growth in space exploration and community engagement.",
+      answer: "We prioritize reusability, minimize launch costs, and promote inclusive innovation through education and partnershipsâ€”ensuring sustainable growth in space exploration and community engagement.",
       category: "Sustainability"
     },
     {
       id: 10,
       title: "Contact Information",
       question: "How can I contact the 3Space Tech team?",
-      answer: "You can contact us using the email addresses provided below, or simply fill out the contact form with your query—we’ll get back to you as soon as possible.",
+      answer: "You can contact us using the email addresses provided below, or simply fill out the contact form with your queryâ€”weâ€™ll get back to you as soon as possible.",
       category: "Contact"
     }
   ]);
@@ -326,7 +325,6 @@ export default function FAQPage() {
           )}
         </div>
       </main>
-      <Footer />
-    </>
+          </>
   );
 }

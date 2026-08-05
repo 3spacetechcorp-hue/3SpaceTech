@@ -3,7 +3,6 @@
 import { useParams } from "next/navigation"
 import { motion } from "framer-motion"
 import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import styles from "./blog.module.css"
 
 export default function BlogPost() {
@@ -86,8 +85,7 @@ export default function BlogPost() {
           </section>
         </article>
 
-        <Footer />
-      </>
+              </>
     )
   }
 
@@ -98,7 +96,6 @@ export default function BlogPost() {
         <h1>Blog post not found</h1>
         <p>The blog post you're looking for doesn't exist.</p>
       </div>
-      <Footer />
-    </>
+          </>
   )
 } 

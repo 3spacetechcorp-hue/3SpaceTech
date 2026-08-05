@@ -1,7 +1,6 @@
-"use client";
+﻿"use client";
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 const Axiom4Mission = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -74,7 +73,7 @@ const Axiom4Mission = () => {
         <section className="hero-section" style={styles.heroSection}>
           <div className="hero-content" style={styles.heroContent}>
             <div className="mission-badge" style={styles.missionBadge}>
-              🚀 SPACE MISSION COVERAGE
+              ðŸš€ SPACE MISSION COVERAGE
             </div>
             <h1 className="hero-title" style={styles.heroTitle}>Axiom-4 Mission</h1>
             <p className="hero-subtitle" style={styles.heroSubtitle}>India's Grand Return to Space</p>
@@ -175,7 +174,7 @@ const Axiom4Mission = () => {
               </p>
 
               <p className={`fade-in ${visibleElements.has('p6') ? 'visible' : ''}`} id="p6" style={styles.paragraph}>
-                The Ax-4 mission also points toward the future of space exploration — one that is commercial, collaborative, and continuous. It is not merely about getting to space; it's about remaining there, working there, and making it a frontier for science, commerce, and diplomacy.
+                The Ax-4 mission also points toward the future of space exploration â€” one that is commercial, collaborative, and continuous. It is not merely about getting to space; it's about remaining there, working there, and making it a frontier for science, commerce, and diplomacy.
               </p>
             </div>
 
@@ -210,12 +209,11 @@ const Axiom4Mission = () => {
           </p>
           
           <p style={styles.conclusionFinalText}>
-            India's return to space has started — not with one step, but as one of a multitude of steps into a common cosmic future.
+            India's return to space has started â€” not with one step, but as one of a multitude of steps into a common cosmic future.
           </p>
         </section>
       </div>
-      <Footer />
-    </div>
+          </div>
   );
 };
 

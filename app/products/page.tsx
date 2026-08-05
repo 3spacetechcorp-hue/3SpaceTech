@@ -1,8 +1,8 @@
-"use client";
+﻿"use client";
 
 import ParallaxBackground from "@/components/ParallaxBackground";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import styles from "@/styles/components/RocketModel.module.css";
 
 export default function Rockets() {
@@ -10,7 +10,7 @@ export default function Rockets() {
     <div className={styles.container}>
       <Navbar />
 
-      {/* Hero with “Launching Soon” */}
+      {/* Hero with â€œLaunching Soonâ€ */}
       <section className={styles.hero}>
         <ParallaxBackground />
         <div className={styles.heroInner}>
@@ -30,7 +30,6 @@ export default function Rockets() {
         </div>
       </section>
 
-      <Footer />
-    </div>
+          </div>
   );
 }
