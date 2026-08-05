@@ -1,4 +1,5 @@
-import nodemailer from 'nodemailer';
+import { promises as fs } from 'fs';
+import path from 'path';
 import { NextResponse } from 'next/server';
 
 interface ContactPayload {
@@ -9,18 +10,16 @@ interface ContactPayload {
   message: string;
 }
 
-const senderEmail = process.env.SMTP_FROM || process.env.SMTP_USER;
-const recipientEmail = process.env.CONTACT_EMAIL || 'contactus@a3spacetech.com';
-const smtpHost = process.env.SMTP_HOST;
-const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : undefined;
-const smtpUser = process.env.SMTP_USER;
-const smtpPass = process.env.SMTP_PASS;
-
 function validatePayload(payload: ContactPayload) {
   if (!payload.name?.trim() || !payload.email?.trim() || !payload.message?.trim()) {
     return 'Name, email, and message are required.';
   }
   return null;
+}
+
+function escapeCsv(value: string) {
+  const stringValue = String(value ?? '');
+  return /[",\n]/.test(stringValue) ? `"${stringValue.replace(/"/g, '""')}"` : stringValue;
 }
 
 export async function POST(req: Request) {
@@ -31,57 +30,36 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: error }, { status: 400 });
     }
 
-    if (!smtpHost || !smtpPort || !smtpUser || !smtpPass || !senderEmail) {
-      return NextResponse.json(
-        {
-          message:
-            'Email settings are not configured. Please set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS and optionally SMTP_FROM in your environment.',
-        },
-        { status: 500 }
-      );
-    }
+    const dataDir = path.join(process.cwd(), 'data');
+    const filePath = path.join(dataDir, 'contact-submissions.csv');
 
-    const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-    });
+    await fs.mkdir(dataDir, { recursive: true });
 
-    const htmlMessage = `
-      <h2>New contact request</h2>
-      <p><strong>Name:</strong> ${body.name}</p>
-      <p><strong>Email:</strong> ${body.email}</p>
-      <p><strong>Organization:</strong> ${body.organization || 'N/A'}</p>
-      <p><strong>Subject:</strong> ${body.subject || 'General Inquiry'}</p>
-      <p><strong>Message:</strong></p>
-      <p>${body.message.replace(/\n/g, '<br/>')}</p>
-    `;
+    const exists = await fs
+      .access(filePath)
+      .then(() => true)
+      .catch(() => false);
 
-    await transporter.sendMail({
-      from: senderEmail,
-      to: recipientEmail,
-      replyTo: body.email,
-      subject: `Contact form: ${body.subject || 'General Inquiry'}`,
-      text: [
-        `Name: ${body.name}`,
-        `Email: ${body.email}`,
-        `Organization: ${body.organization || 'N/A'}`,
-        `Subject: ${body.subject || 'General Inquiry'}`,
-        'Message:',
-        body.message,
-      ].join('\n'),
-      html: htmlMessage,
-    });
+    const row = [
+      new Date().toISOString(),
+      escapeCsv(body.name),
+      escapeCsv(body.email),
+      escapeCsv(body.organization || ''),
+      escapeCsv(body.subject || 'General Inquiry'),
+      escapeCsv(body.message),
+    ].join(',');
 
-    return NextResponse.json({ message: 'Your message was sent successfully.' });
+    const content = exists
+      ? `${row}\n`
+      : `timestamp,name,email,organization,subject,message\n${row}\n`;
+
+    await fs.appendFile(filePath, content, 'utf8');
+
+    return NextResponse.json({ message: 'Your message was saved successfully.' });
   } catch (error) {
     console.error('Contact API error:', error);
     return NextResponse.json(
-      { message: 'Unable to send your message at this time. Please try again later.' },
+      { message: 'Unable to save your message at this time. Please try again later.' },
       { status: 500 }
     );
   }
