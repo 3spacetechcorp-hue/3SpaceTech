@@ -1,4 +1,5 @@
 import { promises as fs } from 'fs';
+import os from 'os';
 import path from 'path';
 import { NextResponse } from 'next/server';
 
@@ -30,7 +31,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: error }, { status: 400 });
     }
 
-    const dataDir = path.join(process.cwd(), 'data');
+    const dataDir = process.env.NODE_ENV === 'production' ? os.tmpdir() : path.join(process.cwd(), 'data');
     const filePath = path.join(dataDir, 'contact-submissions.csv');
 
     await fs.mkdir(dataDir, { recursive: true });
