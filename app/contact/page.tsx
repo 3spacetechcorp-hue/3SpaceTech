@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -146,10 +146,11 @@ export default function ContactPage() {
       key: "brochure",
       title: "Company Brochure",
       text: "Download our brochure to know more about us.",
-      cta: "Download PDF",
-      href: "#",
+      cta: "Download Brochure",
+      href: "/brochure/3Space-Brochure.pptx",
       icon: <FileText size={26} />,
       variant: styles.exploreBrochure,
+      download: "3Space-Brochure.pptx",
     },
     {
       key: "events",
@@ -348,6 +349,7 @@ export default function ContactPage() {
                 <motion.a
                   key={card.key}
                   href={card.href}
+                  {...(card.download ? { download: card.download } : {})}
                   className={styles.exploreCard}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
