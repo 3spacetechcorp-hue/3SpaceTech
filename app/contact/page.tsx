@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import ParallaxBackground from "@/components/ParallaxBackground";
 import styles from "@/styles/Contact.module.css";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaLinkedinIn,
   FaInstagram,
@@ -17,6 +17,8 @@ import {
   FaEnvelope,
   FaBuilding,
   FaWhatsapp ,
+  FaCircleCheck,
+  FaCircleExclamation,
 } from "react-icons/fa6";
 import {
   Briefcase,
@@ -34,6 +36,14 @@ export default function ContactPage() {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+
+  useEffect(() => {
+    if (toast) {
+      const timer = setTimeout(() => setToast(null), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -63,11 +73,11 @@ export default function ContactPage() {
       const data = await response.json();
       setStatus('sent');
       setForm({ name: '', email: '', organization: '', subject: '', message: '' });
-      alert(data.message || 'Message sent successfully.');
+      setToast({ message: data.message || 'Message sent successfully!', type: 'success' });
     } catch (error) {
       console.error('Contact form submit error:', error);
       setStatus('idle');
-      alert(error instanceof Error ? error.message : 'There was a problem sending your message.');
+      setToast({ message: error instanceof Error ? error.message : 'There was a problem sending your message.', type: 'error' });
     }
   };
 
@@ -434,6 +444,45 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
+          {/* Toast Notification */}
+          <AnimatePresence>
+            {toast && (
+              <motion.div
+                className={styles.toastOverlay}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setToast(null)}
+              >
+                <motion.div
+                  className={`${styles.toastCard} ${toast.type === "success" ? styles.toastSuccess : styles.toastError}`}
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                  transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <span className={styles.toastIconWrapper}>
+                    {toast.type === "success" ? (
+                      <FaCircleCheck size={32} />
+                    ) : (
+                      <FaCircleExclamation size={32} />
+                    )}
+                  </span>
+                  <h3 className={styles.toastTitle}>
+                    {toast.type === "success" ? "Message Sent!" : "Something went wrong"}
+                  </h3>
+                  <p className={styles.toastMessage}>{toast.message}</p>
+                  <button
+                    className={styles.toastBtn}
+                    onClick={() => setToast(null)}
+                  >
+                    OK
+                  </button>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
           </>
   );
 } 
