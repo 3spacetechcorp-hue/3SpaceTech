@@ -1,8 +1,8 @@
-﻿"use client";
+"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
-import LaunchCountdown from "@/components/LaunchCountdown";
+
 // import CollaborativeNetworkSection from "@/components/collab";
 import styles from "@/styles/Home.module.css";
 import { motion } from "framer-motion";
@@ -120,16 +120,7 @@ export default function Home() {
           <div className={styles.stars}></div>
         </div>
 
-        {/* Countdown */}
-        <section id="countdown" className={`section ${styles.countdownSection}`}>
-          <div className="container">
-            <h2 className="section-title">Next Rocket Launch</h2>
-            <p className="section-subtitle">
-              Join us for our next mission as we continue to push the boundaries of space exploration
-            </p>
-            <LaunchCountdown />
-          </div>
-        </section>
+
 
         {/* <CollaborativeNetworkSection /> */}
 
