@@ -7,7 +7,7 @@ export default function TermsPage() {
     <div className="terms-page">
       <Navbar />
     <div className="container mx-auto py-20">
-      <h1 className="text-4xl font-bold mb-8">Terms &amp; Conditions â€“ Anjanisutah 3SPACE Pvt. Ltd.</h1>
+      <h1 className="text-4xl font-bold mb-8">Terms &amp; Conditions – Anjanisutah 3SPACE Pvt. Ltd.</h1>
       <div className="prose prose-invert max-w-none">
         <p>Welcome to <a href="https://www.3spacecorp.com" target="_blank" rel="noopener noreferrer">https://www.3spacecorp.com</a>. By using our website, you agree to comply with the following terms and conditions.</p>
         <hr className="my-6" />

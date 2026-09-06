@@ -22,7 +22,7 @@ export default function AboutPage() {
   const missionSteps = [
     {
       title: "Our Mission",
-      content: "To position India as a global space leader by enabling cost-effective satellite launches and developing reusable rocketsâ€”paving the way for a spacefaring humanity."
+      content: "To position India as a global space leader by enabling cost-effective satellite launches and developing reusable rockets—paving the way for a spacefaring humanity."
 
     },
     {
@@ -36,7 +36,7 @@ export default function AboutPage() {
   const visionSteps = [
     {
       title: "Our Vision",
-      content: "A sustainable multi-planetary futureâ€”advancing deep space travel and space tech for the betterment of humankind."
+      content: "A sustainable multi-planetary future—advancing deep space travel and space tech for the betterment of humankind."
     },
     {
       title: "What we do",
@@ -75,24 +75,24 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className={styles.aboutText}
           >
-            <h2 className={styles.sectionTitle}>More Than a Name â€” This is 3SPACE</h2>
+            <h2 className={styles.sectionTitle}>More Than a Name — This is 3SPACE</h2>
             <div className={styles.justifiedText}>
               <p>
-                The "3" in 3SPACE isn't just a number â€” it's our identity. It stands for the three frontiers we aim to conquer: 
+                The "3" in 3SPACE isn't just a number — it's our identity. It stands for the three frontiers we aim to conquer: 
                 Earth and Near-Earth space, where our journey begins; our Solar System, where curiosity leads; and beyond, into 
                 the depths of deep space.
               </p>
               <p>
-                It's also a tribute to three legends who shaped India's space story â€” Dr. Vikram Sarabhai, Dr. A.P.J. Abdul Kalam, 
-                and Prof. Satish Dhawan â€” whose vision fuels our mission.
+                It's also a tribute to three legends who shaped India's space story — Dr. Vikram Sarabhai, Dr. A.P.J. Abdul Kalam, 
+                and Prof. Satish Dhawan — whose vision fuels our mission.
               </p>
               <p>
-                Rooted in the timeless cycle of Creation, Preservation, and Transformation, 3SPACE is more than a name â€” 
+                Rooted in the timeless cycle of Creation, Preservation, and Transformation, 3SPACE is more than a name — 
                 it's a belief that space should be free for ideas, free for innovation, and free for those who dare to dream beyond boundaries.
               </p>
             </div>
             <blockquote className={styles.quote}>
-              "3SPACE â€” because space isn't the final frontier. It's just the beginning."
+              "3SPACE — because space isn't the final frontier. It's just the beginning."
             </blockquote>
           </motion.div>
         </div>
@@ -174,24 +174,24 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className={styles.aboutText}
           >
-            <h2 className={styles.sectionTitle}>More Than a Name â€” This is 3SPACE</h2>
+            <h2 className={styles.sectionTitle}>More Than a Name — This is 3SPACE</h2>
             <div className={styles.justifiedText}>
               <p>
-                The "3" in 3SPACE isn't just a number â€” it's our identity. It stands for the three frontiers we aim to conquer: 
+                The "3" in 3SPACE isn't just a number — it's our identity. It stands for the three frontiers we aim to conquer: 
                 Earth and Near-Earth space, where our journey begins; our Solar System, where curiosity leads; and beyond, into 
                 the depths of deep space.
               </p>
               <p>
-                It's also a tribute to three legends who shaped India's space story â€” Dr. Vikram Sarabhai, Dr. A.P.J. Abdul Kalam, 
-                and Prof. Satish Dhawan â€” whose vision fuels our mission.
+                It's also a tribute to three legends who shaped India's space story — Dr. Vikram Sarabhai, Dr. A.P.J. Abdul Kalam, 
+                and Prof. Satish Dhawan — whose vision fuels our mission.
               </p>
               <p>
-                Rooted in the timeless cycle of Creation, Preservation, and Transformation, 3SPACE is more than a name â€” 
+                Rooted in the timeless cycle of Creation, Preservation, and Transformation, 3SPACE is more than a name — 
                 it's a belief that space should be free for ideas, free for innovation, and free for those who dare to dream beyond boundaries.
               </p>
             </div>
             <blockquote className={styles.quote}>
-              "3SPACE â€” because space isn't the final frontier. It's just the beginning."
+              "3SPACE — because space isn't the final frontier. It's just the beginning."
             </blockquote>
           </motion.div>
         </div>

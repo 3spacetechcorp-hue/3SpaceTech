@@ -11,7 +11,7 @@ export default function PrivacyPage() {
     <div className="privacy-container">
       <div className="privacy-wrapper">
         <div className="privacy-header">
-          <h1 className="privacy-title">Privacy Policy â€“ Anjanisutah 3SPACE Pvt. Ltd.</h1>
+          <h1 className="privacy-title">Privacy Policy – Anjanisutah 3SPACE Pvt. Ltd.</h1>
         </div>
         <div className="privacy-content">
           <p className="privacy-updated">At Anjanisutah 3SPACE Pvt. Ltd., we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website, <a href="https://www.3spacecorp.com/" target="_blank" rel="noopener noreferrer">https://www.3spacecorp.com/</a></p>

@@ -10,7 +10,7 @@ export default function Rockets() {
     <div className={styles.container}>
       <Navbar />
 
-      {/* Hero with â€œLaunching Soonâ€ */}
+      {/* Hero with “Launching Soon” */}
       <section className={styles.hero}>
         <ParallaxBackground />
         <div className={styles.heroInner}>

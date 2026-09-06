@@ -26,7 +26,7 @@ const CompetitionPage = () => {
             />
           </div>
           <div className={styles.heroContent}>
-            <h1>3Space Tech â€“ National Aerospace Innovation Challenge</h1>
+            <h1>3Space Tech – National Aerospace Innovation Challenge</h1>
             <p className={styles.tagline}>
               Compete with Purpose. Innovate with Passion. Launch Your Aerospace Journey.
             </p>
@@ -37,7 +37,7 @@ const CompetitionPage = () => {
               <strong>3Space Tech</strong> invites India's brightest young minds to a prestigious national-level competition aimed at discovering and nurturing next-generation talent in aerospace technology.
             </p>
             <p>
-              This isn't just another contestâ€”<br />
+              This isn't just another contest—<br />
               <strong>It's your launchpad to real innovation, industry exposure, and career acceleration.</strong>
             </p>
           </div>
@@ -59,7 +59,7 @@ const CompetitionPage = () => {
           {/* <div className={styles.competitionInfo}>
             <div className={styles.infoItem}>
               <span className={styles.infoLabel}>Registration Fee:</span>
-              <span className={styles.infoValue}>â‚¹1000 per team</span>
+              <span className={styles.infoValue}>₹1000 per team</span>
             </div>
           </div> */}
         </section>
@@ -91,7 +91,7 @@ const CompetitionPage = () => {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Beyond the Competition</h2>
           <p>       
-            While the challenge is primarily conducted online to ensure nationwide accessibility, the journey doesnâ€™t end there for the top-performing teams:
+            While the challenge is primarily conducted online to ensure nationwide accessibility, the journey doesn’t end there for the top-performing teams:
           </p>
           <ul className={styles.featureList}>
             <li className={styles.featureItem}><span className={styles.featureIcon}>ðŸš€</span><span className={styles.featureText}>Collaborate closely with the 3Space Tech team through hybrid (online + offline) formats</span></li>
@@ -114,10 +114,10 @@ const CompetitionPage = () => {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Important Notes</h2>
           <ul className={styles.featureList}>
-            <li className={styles.featureItem}><span className={styles.featureIcon}>âš ï¸</span><span className={styles.featureText}>Design a 1kg / 2kg / 3kg suborbital payload for a sounding launch mission reachingÂ 10kmÂ altitude</span></li>
-            <li className={styles.featureItem}><span className={styles.featureIcon}>âš ï¸</span><span className={styles.featureText}>Participants must follow the schedule strictlyâ€”delays in submission or attendance during key phases may lead to disqualification</span></li>
-            <li className={styles.featureItem}><span className={styles.featureIcon}>âš ï¸</span><span className={styles.featureText}>All updates, results, and instructions will be shared via official communication channelsâ€”stay alert and responsive.</span></li>
-            <li className={styles.featureItem}><span className={styles.featureIcon}>âš ï¸</span><span className={styles.featureText}>Last date for registration: 10 July 2025</span></li>
+            <li className={styles.featureItem}><span className={styles.featureIcon}>⚠️</span><span className={styles.featureText}>Design a 1kg / 2kg / 3kg suborbital payload for a sounding launch mission reachingÂ 10kmÂ altitude</span></li>
+            <li className={styles.featureItem}><span className={styles.featureIcon}>⚠️</span><span className={styles.featureText}>Participants must follow the schedule strictly—delays in submission or attendance during key phases may lead to disqualification</span></li>
+            <li className={styles.featureItem}><span className={styles.featureIcon}>⚠️</span><span className={styles.featureText}>All updates, results, and instructions will be shared via official communication channels—stay alert and responsive.</span></li>
+            <li className={styles.featureItem}><span className={styles.featureIcon}>⚠️</span><span className={styles.featureText}>Last date for registration: 10 July 2025</span></li>
           </ul>
         </section>
 
@@ -125,11 +125,11 @@ const CompetitionPage = () => {
         <section className={styles.ctaSection}>
         <h2 className={styles.ctaTitle}>Make Your Mark</h2>
         <p className={styles.ctaDescription}>
-            This is more than just a challengeâ€”it's an invitation to build, learn, and lead.<br />
-            Whether you're an aspiring engineer, innovator, or changemakerâ€”this is your chance to be part of something bigger.
+            This is more than just a challenge—it's an invitation to build, learn, and lead.<br />
+            Whether you're an aspiring engineer, innovator, or changemaker—this is your chance to be part of something bigger.
         </p>
         <div className={styles.ctaBox}>
-            <span className={styles.ctaStatus}>Registration fees: â‚¹1000/- per team</span>
+            <span className={styles.ctaStatus}>Registration fees: ₹1000/- per team</span>
             <p>Registration deadline: 10 July 2025</p>
             <div className={styles.buttonContainer}>
                 <a href="https://forms.gle/EjfsFQG2Fdt1kcvr7" className={styles.ctaButton}>
