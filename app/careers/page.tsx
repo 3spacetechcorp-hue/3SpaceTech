@@ -112,7 +112,7 @@ export default function CareersPage() {
         "Document technical processes, code, and system behavior."
       ],
       requirements: [
-        " Bachelorâ€™s or Masterâ€™s in Electronics, Electrical, or a related electronics field",
+        " Bachelor’s or Master’s in Electronics, Electrical, or a related electronics field",
         "Basic understanding of wireless communication protocols.",
         "Strong grasp of error detection/correction techniques like CRC, ARQ, and Sliding Window Protocol.",
         "Familiar with microcontroller protocols such as SPI, I2C, and UART.",
@@ -410,7 +410,7 @@ export default function CareersPage() {
             >
               <h3>Meaningful Work</h3>
               <p>
-              Join a mission advancing Indiaâ€™s role in global space and shaping humanityâ€™s future.
+              Join a mission advancing India’s role in global space and shaping humanity’s future.
 
               </p>
             </motion.div>

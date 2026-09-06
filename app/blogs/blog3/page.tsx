@@ -174,7 +174,7 @@ const Axiom4Mission = () => {
               </p>
 
               <p className={`fade-in ${visibleElements.has('p6') ? 'visible' : ''}`} id="p6" style={styles.paragraph}>
-                The Ax-4 mission also points toward the future of space exploration â€” one that is commercial, collaborative, and continuous. It is not merely about getting to space; it's about remaining there, working there, and making it a frontier for science, commerce, and diplomacy.
+                The Ax-4 mission also points toward the future of space exploration — one that is commercial, collaborative, and continuous. It is not merely about getting to space; it's about remaining there, working there, and making it a frontier for science, commerce, and diplomacy.
               </p>
             </div>
 
@@ -209,7 +209,7 @@ const Axiom4Mission = () => {
           </p>
           
           <p style={styles.conclusionFinalText}>
-            India's return to space has started â€” not with one step, but as one of a multitude of steps into a common cosmic future.
+            India's return to space has started — not with one step, but as one of a multitude of steps into a common cosmic future.
           </p>
         </section>
       </div>

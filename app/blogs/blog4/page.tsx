@@ -51,13 +51,13 @@ export default function Blog4() {
             <div className={styles.articleContent}>
               <p className={styles.leadParagraph}>
                 Imagine you're hurtling toward Mars, your favorite playlist still pumping through the cabin. 
-                At 3space, we believe the next generation's take on space exploration would lookâ€”and feelâ€”completely different. 
+                At 3space, we believe the next generation's take on space exploration would look—and feel—completely different. 
                 Here's our vision:
               </p>
 
               <h2 className={styles.sectionTitle}>Mission Control on Discord</h2>
               <p>
-                No more hushed control rooms and endless button-pushing. Picture a vibrant Discord serverâ€”channels 
+                No more hushed control rooms and endless button-pushing. Picture a vibrant Discord server—channels 
                 like <code>#pls-no-meteors</code>, <code>#space-snacks</code>, and a chill Lo-fi bot in the background. 
                 Want to launch? Type <code>/go-brr</code> and watch your rocket light up the sky.
               </p>
@@ -70,13 +70,13 @@ export default function Blog4() {
                 "Landed on Mars. No Wi-Fi. Miss my oat milk. "
               </blockquote>
               <p>
-                It's authentic, it's viralâ€”and it captures the moment.
+                It's authentic, it's viral—and it captures the moment.
               </p>
 
               <h2 className={styles.sectionTitle}>AI Copilot With Attitude</h2>
               <div className={styles.dialogueBox}>
                 <p><strong>You:</strong> "Hey, how's the air?"</p>
-                <p><strong>AI:</strong> "Breathable. Your vibe? Midâ€”but improving."</p>
+                <p><strong>AI:</strong> "Breathable. Your vibe? Mid—but improving."</p>
               </div>
               <p>
                 An AI that's helpful and hilarious keeps the crew sharp and entertained.
@@ -85,7 +85,7 @@ export default function Blog4() {
               <h2 className={styles.sectionTitle}>Eco-First Exploration</h2>
               <p>
                 Recycled spacecraft. Zero-waste habitats. And no moon camps without a proper alien welcome party. 
-                Sustainability isn't a buzzwordâ€”it's mission critical.
+                Sustainability isn't a buzzword—it's mission critical.
               </p>
 
               <h2 className={styles.sectionTitle}>Meme Diplomacy</h2>
@@ -97,7 +97,7 @@ export default function Blog4() {
               <h2 className={styles.sectionTitle}> Launch Day = Festival Day</h2>
               <p>
                 Drone light shows. Zero-G TikToks. Holograms belting "Welcome to the Galaxy." 
-                And a countdown that ends with <strong>3â€¦2â€¦1â€¦ SLAY.</strong>
+                And a countdown that ends with <strong>3…2…1… SLAY.</strong>
               </p>
 
               <div className={styles.conclusion}>
@@ -106,7 +106,7 @@ export default function Blog4() {
                   Because exploring the universe should be as fun as it is groundbreaking.
                 </p>
                 <p className={styles.callToAction}>
-                  <strong>Join usâ€”and let's make cosmic history.</strong>
+                  <strong>Join us—and let's make cosmic history.</strong>
                 </p>
               </div>
             </div>
