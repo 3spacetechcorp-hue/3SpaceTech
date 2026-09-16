@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { motion } from "framer-motion"
 import ParallaxBackground from "@/components/ParallaxBackground"
@@ -41,7 +41,7 @@ export default function AboutPage() {
     {
       title: "What we do",
       content: [
-        "We are currently developing a proof-of-concept rocket aimed at a 10 km launch while fostering a space innovation community and building global partnerships for futureÂ advancements.",
+        "We are currently developing a proof-of-concept rocket aimed at a 3 km launch while fostering a space innovation community and building global partnerships for future advancements.",
         
       ]
     }

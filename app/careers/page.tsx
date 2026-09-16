@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
@@ -25,105 +25,7 @@ export default function CareersPage() {
   }
 
   // Constant jobs (existing 3 careers)
-  const constantJobs = [
-    {
-      id: 1,
-      title: "Avionics Hardware Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      description:
-        "Design, develop, and test electronic hardware for aerospace systems, including PCBs, sensor interfaces, power systems, and flight avionics. Ensure reliability under extreme conditions.",
-      responsibilities: [
-        "Design flight-ready PCBs and electronic assemblies.",
-        "Select components for radiation, thermal, and vibration tolerance.",
-        "Support integration and environmental testing (EMI/EMC, TVAC).",
-        "Collaborate with systems, software, and mechanical teams.",
-        "Document schematics, layouts, and test procedures.",
-      ],
-      requirements: [
-        "Bachelor's or Masters in Electronics, Electrical, or related field.",
-        "Experience with PCB design tools (e.g., Altium, KiCAD).",
-        "Understanding of signal integrity, power electronics, and embedded systems.",
-        "Familiar with aerospace standards and testing."
-      ],
-      isCurrentOpening: false,
-    },
-    {
-      id: 2,
-      title: "Embedded System Programming Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      description:
-        "Develop and implement firmware/software for embedded systems in real-time and resource-constrained environments. Work on microcontroller-based applications across aerospace, automotive, or IoT domains.",
-      responsibilities: [
-       "Write and debug embedded C/C++ code for MCUs (ARM, AVR, etc.).",
-        "Develop drivers, middleware, and application logic.",
-        "Interface with sensors, actuators, and communication protocols (UART, SPI, I2C, CAN).",
-        "Optimize for performance, memory, and power.",
-        "Collaborate with hardware and systems teams for integration and testing."
-      ],
-      requirements: [
-        "Bachelor's or Masters in Electronics, Electrical, or related field.",
-        "Familiar with microcontroller protocols such as SPI, I2C, and UART.",
-        "Strong in embedded C/C++, RTOS, and low-level programming.",
-        "Experience with IDEs, debuggers, and hardware tools (oscilloscope, logic analyzer).",
-        "Familiar with version control (Git) and real-time systems.",
-      ],
-      isCurrentOpening: false,
-    },
-    {
-      id: 3,
-      title: "Guidance Navigation and Control Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      description:
-        "Design, model, and implement control systems for dynamic systems for rockets. Ensure system stability, accuracy, and performance under varying conditions.",
-      responsibilities: [
-       "Develop control algorithms (PID, state-space, adaptive, etc.).",
-        "Model and simulate systems using MATLAB/Simulink or equivalent tools.",
-        "Implement controllers on embedded platforms or real-time systems.",
-        "Analyze system response, tune parameters, and validate performance.",
-        "Collaborate with mechanical, electronics, and software teams."
-      ],
-      requirements: [
-        "Bachelor's in Electronics, Electrical, Mechatronics, Aerospace, Mechanical or related fields.",
-        "Strong foundation in control theory and system dynamics.",
-        "Experience with MATLAB/Simulink and real-time implementation.",
-        "Familiar with sensors, actuators, and embedded control systems."
-      ],
-      isCurrentOpening: false,
-    },
-    {
-      id: 4,
-      title: "Telemetry and Telecommand Software Engineer",
-      department: "Current Openings",
-      location: "Remote",
-      type: "Full-time",
-      description:
-      "We are looking for a highly motivated TTC Software Intern to join our Space Systems team and contribute to the development of telemetry and telecommand protocols for launch vehicles or satellite platforms. This internship offers a unique opportunity to work on real-world space communication systems and gain hands-on experience in the aerospace domain.",
-      responsibilities: [
-        " Assist in the development and simulation of TTC software modules.",
-        "Contribute to protocol design for reliable uplink/downlink communication.",
-        "Work with engineering teams to integrate TTC software with onboard systems.",
-        " Test and debug communication flows using tools and simulators.",
-        "Document technical processes, code, and system behavior."
-      ],
-      requirements: [
-        " Bachelor’s or Master’s in Electronics, Electrical, or a related electronics field",
-        "Basic understanding of wireless communication protocols.",
-        "Strong grasp of error detection/correction techniques like CRC, ARQ, and Sliding Window Protocol.",
-        "Familiar with microcontroller protocols such as SPI, I2C, and UART.",
-        "Knowledge of embedded C/C++ and low-level programming is a plus.",
-        "Comfortable using IDEs, debuggers, and hardware tools (e.g., oscilloscope, logic analyzer).",
-        "Experience with version control systems like Git.",
-        "Familiar with version control (Git) and real-time systems."
-      ],
-      isCurrentOpening: true,
-    }
-  ]
+  const constantJobs: any[] = []
 
   // Fetch careers from API
   useEffect(() => {
