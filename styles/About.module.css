@@ -1,6 +1,6 @@
 /* About Content Section */
 .aboutContent {
-  background: #000000;
+  background: transparent;
   padding: 6rem 0;
   position: relative;
   z-index: 2;
@@ -80,7 +80,7 @@
 .timelineSection {
   position: relative;
   z-index: 2;
-  background: #000000;
+  background: transparent;
   padding: 8rem 0;
   min-height: 100vh;
 }
@@ -234,7 +234,7 @@
 .valuesSection {
   position: relative;
   z-index: 2;
-  background-color: #000000;
+  background-color: transparent;
 }
 
 .valueCard {
@@ -278,7 +278,7 @@
 .teamSection {
   position: relative;
   z-index: 2;
-  background-color: #000000;
+  background-color: transparent;
 }
 
 .teamCard {

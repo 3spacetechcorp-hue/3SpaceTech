@@ -5,7 +5,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: #000000;
+  background: transparent;
 }
 
 /* Flex container for hero section */
@@ -286,7 +286,7 @@
 .missionSection {
   position: relative;
   z-index: 2;
-  background: var(--background);
+  background: transparent;
   padding: 7rem 0;
 }
 
@@ -582,50 +582,7 @@
   margin-bottom: 3rem;
 }
 
-/* Starfield for background animation */
-.starfield {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  background: #000;
-  pointer-events: none;
-}
-
-.stars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(2.5px 2.5px at 10px 10px, white, rgba(0,0,0,0)),
-    radial-gradient(2.5px 2.5px at 150px 150px, white, rgba(0,0,0,0)),
-    radial-gradient(2.5px 2.5px at 300px 300px, white, rgba(0,0,0,0));
-  background-size: 600px 600px;
-  animation: starAnimation 60s linear infinite;
-}
-
-.stars:nth-child(2) {
-  background-image: 
-    radial-gradient(2.5px 2.5px at 50px 50px, white, rgba(0,0,0,0)),
-    radial-gradient(2.5px 2.5px at 200px 200px, white, rgba(0,0,0,0)),
-    radial-gradient(2.5px 2.5px at 350px 350px, white, rgba(0,0,0,0));
-  background-size: 500px 500px;
-  animation: starAnimation 80s linear infinite;
-  opacity: 0.5;
-}
-
-@keyframes starAnimation {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(600px);
-  }
-}
+/* Starfield CSS removed (now global) */
 
 /* Responsive styles - Comprehensive Earth image responsiveness */
 @media (max-width: 1400px) {

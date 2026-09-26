@@ -144,7 +144,7 @@
   /* Position below the toggle */
   right: 0;
   /* Align to the right */
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
@@ -198,7 +198,7 @@
   /* Align dropdown with the right edge */
   width: 100%;
   /* Ensure it spans the full screen width */
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   display: flex;
   flex-direction: column;
