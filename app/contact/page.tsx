@@ -155,19 +155,12 @@ export default function ContactPage() {
     {
       key: "brochure",
       title: "Company Brochure",
-<<<<<<< Updated upstream
-      text: "Download our brochure to know more about us.",
-      cta: "Download Brochure",
-      href: "/brochure/3Space-Brochure.pptx",
-=======
       text: "View or download our brochure to know more about us.",
       cta: "View Brochure",
       href: "/brochure.pdf",
       target: "_blank",
->>>>>>> Stashed changes
       icon: <FileText size={26} />,
       variant: styles.exploreBrochure,
-      download: "3Space-Brochure.pptx",
     },
     {
       key: "events",
@@ -366,12 +359,9 @@ export default function ContactPage() {
                 <motion.a
                   key={card.key}
                   href={card.href}
-<<<<<<< Updated upstream
                   {...(card.download ? { download: card.download } : {})}
-=======
                   target={card.target}
                   rel={card.target === "_blank" ? "noopener noreferrer" : undefined}
->>>>>>> Stashed changes
                   className={styles.exploreCard}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
