@@ -113,12 +113,7 @@ export default function Home() {
           <div className={styles.floatingElement}></div>
         </section>
 
-        {/* Star Background */}
-        <div className={styles.starfield}>
-          <div className={styles.stars}></div>
-          <div className={styles.stars}></div>
-          <div className={styles.stars}></div>
-        </div>
+        {/* Star Background removed (now global) */}
 
 
 

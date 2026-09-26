@@ -3,7 +3,7 @@
   position: relative;
   overflow: hidden;
   perspective: 1000px;
-  background: #000000;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;

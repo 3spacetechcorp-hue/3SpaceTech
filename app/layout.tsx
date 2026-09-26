@@ -5,6 +5,8 @@ import { Inter } from "next/font/google"
 // @ts-ignore
 import "./globals.css"
 
+import StarBackground from "@/components/StarBackground"
+
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
@@ -28,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <StarBackground />
 
   <Script
     id="organization-schema"
