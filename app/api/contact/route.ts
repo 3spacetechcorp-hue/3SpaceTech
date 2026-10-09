@@ -6,7 +6,7 @@ import { promises as fs } from 'fs';
 import os from 'os';
 import path from 'path';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+
 
 interface ContactPayload {
   name: string;
@@ -131,6 +131,8 @@ export async function POST(req: Request) {
     // 5. Resend notification
     try {
       if (process.env.RESEND_API_KEY && process.env.INQUIRY_RECEIVER_EMAIL) {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        
         // We use a verified domain or onboarding@resend.dev if that's all that's available
         // Usually, the sender email should be configured as an env variable or default to a safe one
         const senderEmail = process.env.RESEND_SENDER_EMAIL || 'onboarding@resend.dev';
