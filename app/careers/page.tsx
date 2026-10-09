@@ -1,77 +1,21 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import ParallaxBackground from "@/components/ParallaxBackground"
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 import styles from "@/styles/Careers.module.css"
-import { MapPin, Briefcase, Clock, ChevronDown, ChevronUp, Search } from "lucide-react"
+import { MapPin, Briefcase, Clock, Search, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { useJobs } from "@/hooks/useJobs"
 
 export default function CareersPage() {
   const [activeTab, setActiveTab] = useState("all")
-  const [expandedJob, setExpandedJob] = useState<number | null>(null)
   const [searchTerm, setSearchTerm] = useState("")
-  const [apiJobs, setApiJobs] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const { jobs, loading, error } = useJobs()
 
-  const toggleJob = (id: number) => {
-    if (expandedJob === id) {
-      setExpandedJob(null)
-    } else {
-      setExpandedJob(id)
-    }
-  }
-
-  // Constant jobs (existing 3 careers)
-  const constantJobs: any[] = []
-
-  // Fetch careers from API
-  useEffect(() => {
-    const fetchCareers = async () => {
-      try {
-        setLoading(true)
-        const response = await fetch('https://threespacebackend.onrender.com/api/careers/all')
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        
-        const data = await response.json()
-        
-        // Transform API data to match the frontend structure
-        const transformedJobs = data.map((job, index) => ({
-          id: constantJobs.length + index + 1, // Ensure unique IDs
-          title: job.JobTitle,
-          department: job.Field,
-          location: job.workType,
-          type: job.employmentType,
-          description: job.description,
-          responsibilities: job.responsibilities || [],
-          requirements: job.requirements || [],
-          isFromAPI: true, // Flag to identify API jobs
-          isCurrentOpening: job.Field === "Current Openings" // Mark as current opening if department matches
-        }))
-        
-        setApiJobs(transformedJobs)
-        setError(null)
-      } catch (err) {
-        console.error('Error fetching careers:', err)
-        setError('')
-        setApiJobs([])
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchCareers()
-  }, [])
-
-  // Combine constant jobs with API jobs
-  const allJobs = [...constantJobs, ...apiJobs]
-
-  const filteredJobs = allJobs.filter((job) => {
+  const filteredJobs = jobs.filter((job) => {
     const matchesSearch =
       job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       job.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -96,11 +40,6 @@ export default function CareersPage() {
             className={styles.heroContent}
           >
             <h1>Join Our Mission</h1>
-            {/* <p>
-              At 3SPACE, we're on a mission to make India a global leader in space exploration. We're looking for
-              passionate individuals who share our vision and want to be part of this exciting journey. Join our team of
-              innovators, engineers, and dreamers as we push the boundaries of what's possible in space technology.
-            </p> */}
           </motion.div>
         </div>
       </section>
@@ -108,7 +47,6 @@ export default function CareersPage() {
       <section className={`section ${styles.careersSection}`}>
         <div className="container">
           <div className={styles.careersIntro}>
-            {/* <h2>Careers at 3SPACE</h2> */}
             <p>
               At 3SPACE, we're on a mission to make India a global leader in space exploration. We're looking for
               passionate individuals who share our vision and want to be part of this exciting journey. Join our team of
@@ -139,7 +77,6 @@ export default function CareersPage() {
                 onClick={() => setActiveTab("Current Openings")}
               >
                 Current Openings
-
               </button>
               <button
                 className={`${styles.tab} ${activeTab === "engineering" ? styles.active : ""}`}
@@ -170,7 +107,7 @@ export default function CareersPage() {
 
           {loading && (
             <div className={styles.loading}>
-              <p></p>
+              <p>Loading open positions...</p>
             </div>
           )}
 
@@ -180,86 +117,55 @@ export default function CareersPage() {
             </div>
           )}
 
-          <div className={styles.jobsList}>
+          <div className={styles.jobGrid}>
             {filteredJobs.length > 0 ? (
               filteredJobs.map((job) => (
-                <motion.div
-                  key={job.id}
-                  className={styles.jobCard}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <div className={styles.jobHeader} onClick={() => toggleJob(job.id)}>
-                    <div className={styles.jobInfo}>
+                <Link href={`/careers/${job.slug}`} key={job.id} className={styles.jobCardLink}>
+                  <motion.div
+                    className={styles.jobCard}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5, boxShadow: "0 10px 25px rgba(0,0,0,0.2)" }}
+                  >
+                    <div className={styles.jobHeader}>
                       <h3>{job.title}</h3>
-                      <div className={styles.jobMeta}>
-                        <div className={styles.metaItem}>
-                          <Briefcase size={16} />
-                          <span>{job.department}</span>
-                        </div>
-                        <div className={styles.metaItem}>
-                          <MapPin size={16} />
-                          <span>{job.location}</span>
-                        </div>
-                        <div className={styles.metaItem}>
-                          <Clock size={16} />
-                          <span>{job.type}</span>
-                        </div>
+                      {job.numberOfOpenings && (
+                        <span className={styles.jobOpenings}>{job.numberOfOpenings} Opening{job.numberOfOpenings > 1 ? 's' : ''}</span>
+                      )}
+                    </div>
+                    
+                    <div className={styles.jobMeta}>
+                      <div className={styles.metaItem}>
+                        <Briefcase size={16} />
+                        <span>{job.department}</span>
+                      </div>
+                      <div className={styles.metaItem}>
+                        <MapPin size={16} />
+                        <span>{job.location}</span>
+                      </div>
+                      <div className={styles.metaItem}>
+                        <Clock size={16} />
+                        <span>{job.type}</span>
                       </div>
                     </div>
-                    <div className={styles.expandIcon}>
-                      {expandedJob === job.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    
+                    <p className={styles.jobSummary}>
+                      {job.description && job.description.length > 150 
+                        ? `${job.description.substring(0, 150)}...` 
+                        : job.description}
+                    </p>
+                    
+                    <div className={styles.jobFooter}>
+                      <span className={styles.readMoreText}>Read More <ArrowRight size={16} className={styles.readMoreIcon} /></span>
                     </div>
-                  </div>
-
-                  {expandedJob === job.id && (
-                    <motion.div
-                      className={styles.jobDetails}
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <p className={styles.jobDescription}>{job.description}</p>
-
-                      <div className={styles.jobSection}>
-                        <h4>Responsibilities</h4>
-                        <ul>
-                          {job.responsibilities.map((item, index) => (
-                            <li key={index}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className={styles.jobSection}>
-                        <h4>Requirements</h4>
-                        <ul>
-                          {job.requirements.map((item, index) => (
-                            <li key={index}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className={styles.applySection}>
-                        {job.isCurrentOpening ? (
-                          <Link href={`https://forms.zohopublic.in/3space/form/Jobapplication/formperma/SK8629fXnU96aYIryG-GWZRdAgcJJz7wd3fqufv4qfw`} className={styles.applyButton} target="_blank" rel="noopener noreferrer">
-                            Apply Now
-                          </Link>
-                        ) : (
-                          <button className={styles.applyButton} disabled>
-                            Apply Now
-                          </button>
-                        )}
-                      </div>
-                    </motion.div>
-                  )}
-                </motion.div>
+                  </motion.div>
+                </Link>
               ))
-            ) : (
+            ) : !loading && (
               <div className={styles.noJobs}>
-                <h3>No Current Openings </h3>
+                <h3>No Current Openings</h3>
                 <p>Try adjusting your search or filter criteria</p>
               </div>
             )}
@@ -275,91 +181,34 @@ export default function CareersPage() {
           </p>
 
           <div className="grid grid-3">
-            <motion.div
-              className={styles.perkCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className={styles.perkCard} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
               <h3>Cutting-Edge Technology</h3>
-              <p>
-              Work with the latest aerospace innovations shaping the future of space exploration.
-
-              </p>
+              <p>Work with the latest aerospace innovations shaping the future of space exploration.</p>
             </motion.div>
-
-            <motion.div
-              className={styles.perkCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className={styles.perkCard} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
               <h3>Growth Opportunities</h3>
-              <p>
-              Learn, grow, and progress with mentorship and clear career paths.
-
-              </p>
+              <p>Learn, grow, and progress with mentorship and clear career paths.</p>
             </motion.div>
-
-            <motion.div
-              className={styles.perkCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className={styles.perkCard} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: true }}>
               <h3>Meaningful Work</h3>
-              <p>
-              Join a mission advancing India’s role in global space and shaping humanity’s future.
-
-              </p>
+              <p>Join a mission advancing India’s role in global space and shaping humanity’s future.</p>
             </motion.div>
-
-            <motion.div
-              className={styles.perkCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className={styles.perkCard} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
               <h3>Great Benefits</h3>
-              <p>
-              Enjoy competitive pay, insurance, retirement plans, and wellness perks.
-
-              </p>
+              <p>Enjoy competitive pay, insurance, retirement plans, and wellness perks.</p>
             </motion.div>
-
-            <motion.div
-              className={styles.perkCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className={styles.perkCard} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
               <h3>Team Culture</h3>
-              <p>
-              Collaborate with brilliant minds in a culture of innovation and openness.
-              </p>
+              <p>Collaborate with brilliant minds in a culture of innovation and openness.</p>
             </motion.div>
-
-            <motion.div
-              className={styles.perkCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className={styles.perkCard} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} viewport={{ once: true }}>
               <h3>Flexible Work</h3>
-              <p>
-              Balance life and work with supportive, flexible scheduling.
-              </p>
+              <p>Balance life and work with supportive, flexible scheduling.</p>
             </motion.div>
           </div>
         </div>
       </section>
-            
+      <Footer />
     </>
   )
 }
