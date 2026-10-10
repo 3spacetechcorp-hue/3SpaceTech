@@ -150,7 +150,8 @@ export function useJobs() {
 
       try {
         setLoading(true);
-        const response = await fetch('https://threespacebackend.onrender.com/api/careers/all');
+        // Fetch through our Next.js API proxy to bypass CORS restrictions
+        const response = await fetch('/api/careers');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
