@@ -1,6 +1,6 @@
 "use client";
 
-import { notFound } from "next/navigation"
+import { notFound, useParams } from "next/navigation"
 import { useJobs, Job, ResponsibilityGroup } from "@/hooks/useJobs"
 import ParallaxBackground from "@/components/ParallaxBackground"
 import Navbar from "@/components/Navbar"
@@ -9,7 +9,9 @@ import { MapPin, Briefcase, Clock, ArrowLeft, ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 import styles from "@/styles/JobDescription.module.css"
 
-export default function JobDescriptionPage({ params }: { params: { slug: string } }) {
+export default function JobDescriptionPage({ params }: { params?: { slug?: string } }) {
+  const routerParams = useParams()
+  const currentSlug = (routerParams?.slug as string) || params?.slug
   const { jobs, loading } = useJobs()
   
   if (loading) {
@@ -23,7 +25,7 @@ export default function JobDescriptionPage({ params }: { params: { slug: string 
     )
   }
 
-  const job = jobs.find(j => j.slug === params.slug)
+  const job = jobs.find(j => j.slug === currentSlug || j.id.toString() === currentSlug)
 
   if (!job) {
     return notFound()
