@@ -32,7 +32,246 @@ export const generateSlug = (title: string, id: string | number) => {
 };
 
 export const constantJobs: Job[] = [
-  // 1. Finance Division
+  // ==========================================
+  // Engineering Division (Technical Internships)
+  // Shared Application Form: https://forms.gle/1tsZou9NBeY7rAir5
+  // ==========================================
+
+  // 1. Combustion and Thermal Management System
+  {
+    id: 'combustion-thermal-management-system',
+    slug: 'combustion-thermal-management-system',
+    title: "Combustion and Thermal Management System",
+    department: "Engineering",
+    location: "Ahmedabad, Gujarat",
+    type: "Technical Intern",
+    numberOfOpenings: 2,
+    description: "In this role, you will work across the full hardware lifecycle from early concepts and CAD models through manufacturing, test execution, and design iteration. The ideal candidate has a strong foundation in heat transfer, thermodynamics, and numerical analysis and can solve complex engineering problems from initial concept.\n\nYou should be comfortable working independently, contributing to design decisions, and communicating results clearly to the rest of the team.",
+    responsibilities: [
+      {
+        heading: "Combustion devices",
+        items: [
+          "Design and develop a variety of combustion devices of liquid rocket engines, combustion chambers, injectors, and igniters. Create models and drawings of parts and assemblies. Perform calculations and analyses with team support.",
+          "Own requirements definition, architecture trades, and system-level integration for assigned subsystems.",
+          "Work with the manufacturing team to create finished engine parts. Support parts through 3D printing, machining, post-processing, and inspection. Incorporate feedback to improve design for manufacturing."
+        ]
+      },
+      {
+        heading: "Thermal systems",
+        items: [
+          "Perform detailed thermal analysis of the rocket engine, including design trade studies, component sizing, and design verification.",
+          "Develop advanced regenerative cooling architectures using high-fidelity CFD simulations and relevant tools.",
+          "Build detailed numerical models to model heat transfer, pressure losses, and combustion stabilities."
+        ]
+      },
+      {
+        heading: "Propulsion Performance",
+        items: [
+          "Conduct performance trade studies and optimization across operating conditions, throttle levels, nozzle geometry, and propellant/feed-system parameters to maximize efficiency while satisfying engine constraints.",
+          "Correlate analytical predictions with hot-fire/test data, identify performance deviations, and refine models and engine design parameters for improved thrust, efficiency, and reliability.",
+          "Develop and maintain analytical and computational performance models and validate those models against component and hot-fire test data."
+        ]
+      },
+      {
+        heading: "Testing, instrumentation, validation",
+        items: [
+          "Plan and execute propulsion-component and engine-level test campaigns, defining test objectives, procedures, operating limits, instrumentation requirements, and acceptance criteria.",
+          "Support the integration and installation of instrumentation on engine hardware, including pressure, temperature, flow, thrust, vibration, and other critical sensors.",
+          "Process and analyze test data to evaluate engine performance, transient behavior, thermal margins, and system response, while identifying anomalies and potential failure modes.",
+          "Correlate test results with analytical and simulation models, validate engineering predictions, and drive design improvements through iterative testing and hardware validation."
+        ]
+      }
+    ],
+    requirements: [
+      "In-depth knowledge of combustion and fluid dynamics, heat transfer, and structural mechanics.",
+      "Good understanding of design principles and manufacturing methods.",
+      "Prior experience developing parts, assemblies, or systems from concept to production.",
+      "Prior experience developing and maintaining engineering design best practices."
+    ],
+    preferredSkills: [
+      "Experience in designing complex parts and assemblies in professional CAD packages like SolidWorks.",
+      "Scientific programming experience (Python, MATLAB, C/C++).",
+      "Proficiency in advanced CFD platforms (Ansys, OpenFOAM) and FEA software (Ansys Mechanical, SolidWorks).",
+      "Demonstrated history of building and testing physical hardware."
+    ],
+    softSkills: [
+      "Self-motivated to solve complex problems and ability to motivate others to achieve a common goal.",
+      "Demonstrated ability to act with good engineering judgement and execute high-quality technical work on tight timelines.",
+      "Demonstrated strong cross-functional collaboration and technical communication skills."
+    ],
+    isCurrentOpening: true,
+    applicationUrl: 'https://forms.gle/1tsZou9NBeY7rAir5'
+  },
+
+  // 2. Propulsion Avionics and System Design
+  {
+    id: 'propulsion-avionics-system-design',
+    slug: 'propulsion-avionics-system-design',
+    title: "Propulsion Avionics and System Design",
+    department: "Engineering",
+    location: "Ahmedabad, Gujarat / Remote",
+    type: "Technical Intern",
+    numberOfOpenings: 2,
+    description: "We are looking for candidates to join our Propulsion Avionics and System Design team. The role involves designing, developing, integrating, and testing electronic systems for aerospace and propulsion applications.\n\nThe selected candidates will work on electronic circuit design, embedded systems, PCB development, communication interfaces, avionics integration, and system-level troubleshooting.",
+    responsibilities: [
+      "Design and analyze electronic circuits for avionics and propulsion systems.",
+      "Develop and integrate embedded systems based on ARM-based microcontrollers.",
+      "Design, test, and debug analog and digital electronic circuits.",
+      "Develop schematics and PCB layouts while following good EMC/EMI design practices.",
+      "Simulate and verify electronic circuits before hardware implementation.",
+      "Integrate and troubleshoot different communication interfaces and peripherals.",
+      "Perform hardware bring-up, testing, debugging, and validation of electronic systems.",
+      "Support integration of avionics, sensors, actuators, communication systems, and other subsystems.",
+      "Analyze hardware failures and implement appropriate design improvements.",
+      "Prepare technical documentation including schematics, test procedures, and system-level documentation."
+    ],
+    requirements: [
+      "Strong fundamentals in analog and digital circuits.",
+      "Experience with ARM-based microcontrollers.",
+      "Ability to design, analyze, and troubleshoot electronic circuits.",
+      "Experience with PCB design, including knowledge of EMC/EMI design practices and rules.",
+      "Experience with circuit simulation tools such as Proteus and Multisim.",
+      "Good understanding of various communication protocols such as CAN, UART, I²C, SPI, RS-232, Ethernet, and EtherCAT.",
+      "Strong debugging, analytical, and problem-solving skills."
+    ],
+    softSkills: [
+      "Strong analytical and critical-thinking skills.",
+      "Good problem-solving and troubleshooting abilities.",
+      "Ability to work effectively in a multidisciplinary engineering team.",
+      "Good communication and technical documentation skills.",
+      "Strong attention to detail and accuracy.",
+      "Willingness to learn new technologies and engineering tools."
+    ],
+    isCurrentOpening: true,
+    applicationUrl: 'https://forms.gle/1tsZou9NBeY7rAir5'
+  },
+
+  // 3. Propulsion Control System
+  {
+    id: 'propulsion-control-system',
+    slug: 'propulsion-control-system',
+    title: "Propulsion Control System",
+    department: "Engineering",
+    location: "Ahmedabad, Gujarat / Remote",
+    type: "Technical Intern",
+    numberOfOpenings: 2,
+    description: "We are looking for candidates to join our Propulsion Control System team. The role involves developing, simulating, tuning, and validating control algorithms for aerospace vehicles and propulsion systems, with a focus on vehicle stability and guidance.\n\nThe selected candidates will be responsible for developing control strategies and validating their performance through simulation before hardware and flight testing.",
+    responsibilities: [
+      "Develop and simulate control algorithms for vehicle stability and guidance.",
+      "Design, tune, and validate controllers for different operating conditions.",
+      "Perform control-system simulations and evaluate controller performance.",
+      "Analyze system response and identify stability and performance issues.",
+      "Implement and evaluate filtering and state-estimation algorithms.",
+      "Validate controllers in simulation before hardware and flight testing.",
+      "Analyze simulation results and optimize controller performance.",
+      "Work closely with avionics, propulsion, embedded systems, and other engineering teams."
+    ],
+    requirements: [
+      "Strong foundation in C/C++ and Python.",
+      "Good understanding of control-system fundamentals, including open-loop and closed-loop control.",
+      "Ability to perform state-space analysis and stability analysis.",
+      "Familiarity with stability-analysis techniques such as Bode plots, Nyquist plots, root locus, and pole-zero analysis.",
+      "Experience with control algorithms such as PID, LQR, and other control techniques.",
+      "Good knowledge of different filtering techniques, including Kalman Filter and Extended Kalman Filter (EKF).",
+      "Strong analytical and problem-solving skills with a logical and systematic approach to engineering problems.",
+      "Ability to understand system dynamics and analyze simulation results.",
+      "Knowledge of MATLAB/Simulink or similar simulation tools is an advantage.",
+      "Basic understanding of aerospace vehicle dynamics and propulsion systems is preferred."
+    ],
+    softSkills: [
+      "Strong analytical and critical-thinking skills.",
+      "Good problem-solving and decision-making abilities.",
+      "Ability to work effectively in a multidisciplinary team.",
+      "Good communication and technical documentation skills.",
+      "Proactive attitude with a willingness to learn and explore new technologies."
+    ],
+    isCurrentOpening: true,
+    applicationUrl: 'https://forms.gle/1tsZou9NBeY7rAir5'
+  },
+
+  // 4. Structural & Cryogenic Propellant Systems
+  {
+    id: 'structural-cryogenic-propellant-systems',
+    slug: 'structural-cryogenic-propellant-systems',
+    title: "Structural & Cryogenic Propellant Systems",
+    department: "Engineering",
+    location: "Ahmedabad, Gujarat / Remote",
+    type: "Technical Intern",
+    numberOfOpenings: 2,
+    description: "Structural & Manufacturing Systems Intern: We're looking for an intern to support structural design, thermal analysis, and manufacturing of engine components, with a focus on regenerative cooling and feed system hardware for a liquid rocket engine.\n\nFluid Systems Intern: We're looking for a fluid systems intern to design and manage storage, handling, and delivery systems for cryogenic and high-pressure fluids used in a liquid rocket engine.",
+    responsibilities: [
+      {
+        heading: "Structural Design & Analysis",
+        items: [
+          "Design structural components, including combustion chambers, injector housings, tanks, and support structures.",
+          "Perform stress, deformation, fatigue, and fracture analysis.",
+          "Analyze vibration, acoustic loads, and combustion-induced instabilities.",
+          "Evaluate structural response to turbomachinery-induced dynamic loads.",
+          "Design and analyze high-pressure vessels used in liquid propulsion systems.",
+          "Assess structural response during startup, shutdown, and throttling."
+        ]
+      },
+      {
+        heading: "Material Selection & Optimization",
+        items: [
+          "Select materials considering strength, weight, thermal resistance, and compatibility with cryogenic propellants.",
+          "Evaluate material behavior under cyclic loads and extreme temperatures.",
+          "Address cryogenic embrittlement and thermal fatigue."
+        ]
+      },
+      {
+        heading: "Manufacturing & Assembly Support",
+        items: [
+          "Ensure designs are manufacturable using CNC, welding, and additive manufacturing.",
+          "Define tolerances, joining methods, and assembly procedures.",
+          "Support fabrication and structural validation testing.",
+          "Correlate simulation models with test data and update design margins."
+        ]
+      },
+      {
+        heading: "Storage & Tank Systems",
+        items: [
+          "Design cryogenic storage systems, including insulated tanks and feed lines.",
+          "Evaluate boil-off rates and thermal losses.",
+          "Ensure safe containment under varying operating conditions."
+        ]
+      },
+      {
+        heading: "Safety & Handling",
+        items: [
+          "Define safe handling procedures for cryogenic and reactive propellants.",
+          "Mitigate risks related to leakage, overpressure, and rapid phase changes.",
+          "Address material compatibility and environmental risks."
+        ]
+      }
+    ],
+    requirements: [
+      "Mechanical behavior of materials, High-temperature materials, fluid mechanics fundamentals, Thermodynamics.",
+      "Experience with high-pressure or cryogenic systems.",
+      "CAD (SolidWorks/Fusion 360) and FEA/CFD tools (ANSYS or similar).",
+      "Python/MATLAB for calculations.",
+      "Familiarity with metal additive manufacturing / design-for-AM.",
+      "Understanding of valve types and feed system basics.",
+      "Knowledge of cryogenic insulation systems and specialized piping.",
+      "Experience with transient flow modelling."
+    ],
+    softSkills: [
+      "Presence of mind.",
+      "Creativity coupled with curiosity.",
+      "Strong analytical thinking.",
+      "Attention to detail.",
+      "Ownership and self-driven problem-solving.",
+      "Ability to work through ambiguity.",
+      "Clear technical communication."
+    ],
+    isCurrentOpening: true,
+    applicationUrl: 'https://forms.gle/1tsZou9NBeY7rAir5'
+  },
+
+  // ==========================================
+  // Finance Division
+  // Application Form: https://docs.google.com/forms/d/e/1FAIpQLSeDSRKHgqadyhTV_auQyWfc39vcfz5on-9ZZpNQ2CtF5Nyduw/viewform?usp=dialog
+  // ==========================================
   {
     id: 'finance-intern',
     slug: 'finance-intern',
@@ -65,7 +304,10 @@ export const constantJobs: Job[] = [
     applicationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeDSRKHgqadyhTV_auQyWfc39vcfz5on-9ZZpNQ2CtF5Nyduw/viewform?usp=dialog'
   },
 
-  // 2. Legal Division
+  // ==========================================
+  // Legal Division
+  // Application Form: https://docs.google.com/forms/d/e/1FAIpQLSeufBwma08SQfHj3L47qRbsx1Mdv1UNuRlWItnRUQ2n6FuErg/viewform?usp=dialog
+  // ==========================================
   {
     id: 'legal-intern',
     slug: 'legal-intern',
@@ -96,7 +338,10 @@ export const constantJobs: Job[] = [
     applicationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeufBwma08SQfHj3L47qRbsx1Mdv1UNuRlWItnRUQ2n6FuErg/viewform?usp=dialog'
   },
 
-  // 3. Marketing Division
+  // ==========================================
+  // Marketing Division
+  // Application Form: https://docs.google.com/forms/d/e/1FAIpQLSf-ZsptYWAQMBe-xc36BgeQbNlv5Mz2qj4RGeMNNiwmt8dY6g/viewform?usp=dialog
+  // ==========================================
   {
     id: 'marketing-intern',
     slug: 'marketing-intern',
@@ -123,7 +368,10 @@ export const constantJobs: Job[] = [
     applicationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf-ZsptYWAQMBe-xc36BgeQbNlv5Mz2qj4RGeMNNiwmt8dY6g/viewform?usp=dialog'
   },
 
-  // 4. Public Relations Division - Public Relations Intern
+  // ==========================================
+  // Public Relations Division
+  // Application Form: https://docs.google.com/forms/d/e/1FAIpQLSf-ZsptYWAQMBe-xc36BgeQbNlv5Mz2qj4RGeMNNiwmt8dY6g/viewform?usp=dialog
+  // ==========================================
   {
     id: 'public-relations-intern',
     slug: 'public-relations-intern',
@@ -159,8 +407,6 @@ export const constantJobs: Job[] = [
     isCurrentOpening: true,
     applicationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf-ZsptYWAQMBe-xc36BgeQbNlv5Mz2qj4RGeMNNiwmt8dY6g/viewform?usp=dialog'
   },
-
-  // 5. Public Relations Division - Graphic Design Intern
   {
     id: 'graphic-design-intern',
     slug: 'graphic-design-intern',
@@ -189,8 +435,6 @@ export const constantJobs: Job[] = [
     isCurrentOpening: true,
     applicationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf-ZsptYWAQMBe-xc36BgeQbNlv5Mz2qj4RGeMNNiwmt8dY6g/viewform?usp=dialog'
   },
-
-  // 6. Public Relations Division - Content Writing Intern
   {
     id: 'content-writing-intern',
     slug: 'content-writing-intern',
@@ -217,8 +461,6 @@ export const constantJobs: Job[] = [
     isCurrentOpening: true,
     applicationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf-ZsptYWAQMBe-xc36BgeQbNlv5Mz2qj4RGeMNNiwmt8dY6g/viewform?usp=dialog'
   },
-
-  // 7. Public Relations Division - Motion & Animation Design Intern
   {
     id: 'motion-animation-design-intern',
     slug: 'motion-animation-design-intern',
@@ -247,8 +489,6 @@ export const constantJobs: Job[] = [
     isCurrentOpening: true,
     applicationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf-ZsptYWAQMBe-xc36BgeQbNlv5Mz2qj4RGeMNNiwmt8dY6g/viewform?usp=dialog'
   },
-
-  // 8. Public Relations Division - Video Editing Intern
   {
     id: 'video-editing-intern',
     slug: 'video-editing-intern',
@@ -278,77 +518,9 @@ export const constantJobs: Job[] = [
     applicationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf-ZsptYWAQMBe-xc36BgeQbNlv5Mz2qj4RGeMNNiwmt8dY6g/viewform?usp=dialog'
   },
 
-  // 9. Engineering Division - Combustion and Thermal Management System Engineer
-  {
-    id: 'combustion-thermal-management-system',
-    slug: 'combustion-thermal-management-system',
-    title: "Combustion and Thermal Management System Engineer",
-    department: "Engineering",
-    location: "Ahmedabad, Gujarat",
-    type: "Full-Time",
-    numberOfOpenings: 1,
-    description: "We are seeking a highly motivated and skilled Combustion and Thermal Management System Engineer to join our team. In this role, you will be responsible for the design, analysis, and optimization of combustion devices and thermal systems critical to our aerospace applications. You will play a pivotal role in ensuring the performance, reliability, and safety of our propulsion systems.",
-    responsibilities: [
-      {
-        heading: "Combustion devices",
-        items: [
-          "Design and analyze combustion chambers, injectors, and ignition systems for aerospace propulsion applications.",
-          "Perform thermodynamic and reacting flow simulations to optimize combustion efficiency, stability, and emissions.",
-          "Develop and validate combustion models using experimental data.",
-          "Collaborate with manufacturing and test teams to ensure manufacturability and testability of combustion hardware."
-        ]
-      },
-      {
-        heading: "Thermal systems",
-        items: [
-          "Design and analyze thermal management systems for aerospace vehicles, including heat exchangers, active and passive cooling systems, and thermal protection systems.",
-          "Perform transient and steady-state thermal simulations of vehicle components and systems.",
-          "Develop and validate thermal models using experimental data.",
-          "Select and evaluate materials and coatings for high-temperature applications."
-        ]
-      },
-      {
-        heading: "Propulsion Performance",
-        items: [
-          "Perform cycle analysis and performance prediction of propulsion systems.",
-          "Develop and maintain performance models.",
-          "Analyze test data to evaluate propulsion system performance."
-        ]
-      },
-      {
-        heading: "Testing, instrumentation, validation",
-        items: [
-          "Develop and execute test plans for combustion and thermal systems.",
-          "Select and specify instrumentation for measuring temperature, pressure, flow, and other relevant parameters.",
-          "Analyze test data to validate models and verify system performance."
-        ]
-      }
-    ],
-    requirements: [
-      "Bachelor's or Master's degree in Mechanical Engineering, Aerospace Engineering, or a related field.",
-      "Strong understanding of thermodynamics, heat transfer, fluid mechanics, and combustion principles.",
-      "Experience with CFD and thermal analysis software (e.g., Ansys, Fluent, CFX, Star-CCM+, Thermal Desktop).",
-      "Experience with CAD software (e.g., SolidWorks, NX, CATIA).",
-      "Experience with testing and instrumentation of thermal and fluid systems.",
-      "Excellent problem-solving and analytical skills.",
-      "Strong communication and teamwork skills."
-    ],
-    preferredSkills: [
-      "Experience with rocket propulsion systems.",
-      "Experience with high-temperature materials and coatings.",
-      "Experience with reacting flow simulations."
-    ],
-    softSkills: [
-      "Engineering judgment",
-      "Collaboration",
-      "Technical communication",
-      "Ability to work independently"
-    ],
-    isCurrentOpening: true,
-    applicationUrl: 'https://forms.zohopublic.in/3space/form/Jobapplication/formperma/SK8629fXnU96aYIryG-GWZRdAgcJJz7wd3fqufv4qfw'
-  },
-
-  // 10. Engineering Division - Telemetry and Telecommand Software Engineer
+  // ==========================================
+  // Additional Engineering Roles
+  // ==========================================
   {
     id: 'ttc-software-engineer',
     slug: 'telemetry-telecommand-software-engineer',
@@ -375,10 +547,8 @@ export const constantJobs: Job[] = [
       "Experience with version control systems like Git."
     ],
     isCurrentOpening: true,
-    applicationUrl: 'https://forms.zohopublic.in/3space/form/Jobapplication/formperma/SK8629fXnU96aYIryG-GWZRdAgcJJz7wd3fqufv4qfw'
+    applicationUrl: 'https://forms.gle/1tsZou9NBeY7rAir5'
   },
-
-  // 11. Engineering Division - Avionics Hardware Engineer
   {
     id: 'avionics-hardware-engineer',
     slug: 'avionics-hardware-engineer',
@@ -402,8 +572,6 @@ export const constantJobs: Job[] = [
     ],
     isCurrentOpening: false
   },
-
-  // 12. Engineering Division - Embedded System Programming Engineer
   {
     id: 'embedded-system-programming-engineer',
     slug: 'embedded-system-programming-engineer',
@@ -428,8 +596,6 @@ export const constantJobs: Job[] = [
     ],
     isCurrentOpening: false
   },
-
-  // 13. Engineering Division - Guidance Navigation and Control Engineer
   {
     id: 'guidance-navigation-control-engineer',
     slug: 'guidance-navigation-control-engineer',
@@ -492,7 +658,7 @@ export function useJobs() {
               numberOfOpenings: job.numberOfOpenings,
               preferredSkills: job.preferredSkills,
               softSkills: job.softSkills,
-              applicationUrl: job.applicationUrl || 'https://forms.zohopublic.in/3space/form/Jobapplication/formperma/SK8629fXnU96aYIryG-GWZRdAgcJJz7wd3fqufv4qfw'
+              applicationUrl: job.applicationUrl || 'https://forms.gle/1tsZou9NBeY7rAir5'
             };
           });
 
