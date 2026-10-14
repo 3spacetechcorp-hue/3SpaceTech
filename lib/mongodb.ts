@@ -8,7 +8,9 @@ let clientPromise: Promise<MongoClient>;
 if (!uri) {
   console.warn('MONGODB_URI environment variable is not defined');
   // Return a rejected promise so it fails gracefully only when actually used, not at build time
-  clientPromise = Promise.reject(new Error('Please define the MONGODB_URI environment variable'));
+  const rejected = Promise.reject(new Error('Please define the MONGODB_URI environment variable'));
+  rejected.catch(() => {}); // Prevent unhandled rejection log during build evaluation
+  clientPromise = rejected;
 } else {
   if (process.env.NODE_ENV === 'development') {
     let globalWithMongo = global as typeof globalThis & {
