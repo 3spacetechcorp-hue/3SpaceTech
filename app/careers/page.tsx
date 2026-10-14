@@ -15,6 +15,23 @@ export default function CareersPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const { jobs, loading, error } = useJobs()
 
+  // Extract unique departments from jobs
+  const preferredOrder = ["Engineering", "Finance", "Legal", "Marketing", "Public Relations"]
+  const departments = Array.from(
+    new Set(
+      jobs
+        .map((job) => job.department)
+        .filter((dept) => Boolean(dept) && dept !== "Current Openings")
+    )
+  ).sort((a, b) => {
+    const indexA = preferredOrder.indexOf(a)
+    const indexB = preferredOrder.indexOf(b)
+    if (indexA !== -1 && indexB !== -1) return indexA - indexB
+    if (indexA !== -1) return -1
+    if (indexB !== -1) return 1
+    return a.localeCompare(b)
+  })
+
   const filteredJobs = jobs.filter((job) => {
     const matchesSearch =
       job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -78,30 +95,15 @@ export default function CareersPage() {
               >
                 Current Openings
               </button>
-              <button
-                className={`${styles.tab} ${activeTab === "engineering" ? styles.active : ""}`}
-                onClick={() => setActiveTab("engineering")}
-              >
-                Engineering
-              </button>
-              <button
-                className={`${styles.tab} ${activeTab === "software" ? styles.active : ""}`}
-                onClick={() => setActiveTab("software")}
-              >
-                Software
-              </button>
-              <button
-                className={`${styles.tab} ${activeTab === "production" ? styles.active : ""}`}
-                onClick={() => setActiveTab("production")}
-              >
-                Production
-              </button>
-              <button
-                className={`${styles.tab} ${activeTab === "operations" ? styles.active : ""}`}
-                onClick={() => setActiveTab("operations")}
-              >
-                Operations
-              </button>
+              {departments.map((dept) => (
+                <button
+                  key={dept}
+                  className={`${styles.tab} ${activeTab.toLowerCase() === dept.toLowerCase() ? styles.active : ""}`}
+                  onClick={() => setActiveTab(dept)}
+                >
+                  {dept}
+                </button>
+              ))}
             </div>
           </div>
 
